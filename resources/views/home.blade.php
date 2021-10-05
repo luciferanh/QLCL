@@ -20,7 +20,7 @@
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index3.html" class="nav-link">Home</a>
-      </li> 
+      </li>
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -46,8 +46,8 @@
         </div>
       </li>
 
-      
-      
+
+
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -71,6 +71,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+            @if($is_admin =='1')
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -100,6 +101,7 @@
               </li>
             </ul>
           </li>
+            @endif
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
@@ -120,7 +122,7 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Icons</p>
                 </a>
-              </li>  
+              </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -155,13 +157,13 @@
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-  </div> 
+  </div>
 <!-- /.content-wrapper -->
   @yield('content')
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
-    
+
   </aside>
   <!-- /.control-sidebar -->
 </div>
