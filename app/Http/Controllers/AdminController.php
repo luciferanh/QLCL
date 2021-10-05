@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Service\CheckAdminService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
+    protected $check_admin;
+    public function __construct(CheckAdminService $check_admin){
+        $this->check_admin = $check_admin;
+    }
     public function index(){
         return view('admin.login',[
             'title'=> 'Đăng nhập Admin'
@@ -26,8 +31,11 @@ class AdminController extends Controller
         ];
         $is_true=Auth::attempt($mang);
         if($is_true == true){
-
-            return redirect()->route('admin');
+            $is_admin = $this->check_admin->get($mang);
+            return redirect()->route('admin',[
+                'title' => 'Home',
+                'is_admin' => $is_admin
+            ]);
 
         }
         $request->session()->flash('error', 'Email hoặc password không đúng');
