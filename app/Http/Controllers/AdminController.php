@@ -11,4 +11,7 @@ class AdminController extends Controller
             'title'=> 'Đăng nhập Admin'
         ]);
     }
+    public function store(Request $request){
+        dd($request);
+    }
 }

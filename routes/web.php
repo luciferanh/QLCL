@@ -7,4 +7,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('admin/login', [AdminController::class,'index'])->name('login');
-Route::post('admin/login/store', [AdminController::class,'store']);
+Route::post('admin/store', [AdminController::class,'store']);
