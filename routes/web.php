@@ -10,5 +10,7 @@ Route::get('admin/login', [AdminController::class,'index']);
 Route::post('admin/store', [AdminController::class,'store']);
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('admin/home', [AdminController::class,'home'])->name('home');
+    Route::prefix('admin') ->group(function(){
+        Route::get('home',[AdminController::class, 'home'])->name('admin');
+    });
 });

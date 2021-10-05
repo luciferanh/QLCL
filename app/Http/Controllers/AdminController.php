@@ -27,9 +27,7 @@ class AdminController extends Controller
         $is_true=Auth::attempt($mang);
         if($is_true == true){
 
-           return redirect()->route('home',[
-               'is_admin'=>$request['is_admin']
-            ]);
+            return redirect()->route('admin');
 
         }
         $request->session()->flash('error', 'Email hoặc password không đúng');
