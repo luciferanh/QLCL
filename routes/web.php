@@ -8,3 +8,7 @@ Route::get('/', function () {
 });
 Route::get('admin/login', [AdminController::class,'index']);
 Route::post('admin/store', [AdminController::class,'store']);
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('admin/home', [AdminController::class,'home'])->name('home');
+});

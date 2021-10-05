@@ -12,6 +12,9 @@ class AdminController extends Controller
             'title'=> 'Đăng nhập Admin'
         ]);
     }
+    public function home(){
+        return view('home');
+    }
     public function store(Request $request){
         $this->validate($request,[
             'email'=>'required|email:filter',
@@ -24,8 +27,7 @@ class AdminController extends Controller
         $is_true=Auth::attempt($mang);
         if($is_true == true){
 
-           return view('admin.home',[
-                'title'=> 'Đăng nhập Admin',
+           return redirect()->route('home',[
                'is_admin'=>$request['is_admin']
             ]);
 
