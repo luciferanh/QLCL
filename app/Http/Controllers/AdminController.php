@@ -44,6 +44,6 @@ class AdminController extends Controller
         }
         $request->session()->flash('error', 'Email hoặc password không đúng');
         return redirect()->back();
-
     }
+   
 }

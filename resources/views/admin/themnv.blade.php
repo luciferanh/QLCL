@@ -1,10 +1,13 @@
 @extends('home')
+
 @section('content')
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+          @include('admin.layout.alert')
         <div class="row">
           <!-- left column -->
           <div class="col-md-12">
@@ -12,29 +15,35 @@
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Them nhan vien moi</h3>
+                
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="" method="post">
                 <div class="card-body">
+                    
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
+                    <input class="form-control" name="name" id="name" placeholder="Enter name">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Quyền hạn</label>
+                    <input class="form-control" name="is_admin" id="is_admin" placeholder="1 là Admin , 2 là User">
                   </div>
                 </div>
                 <!-- /.card-body -->
-
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
+                @csrf
               </form>
             </div>
             <!-- /.card -->
