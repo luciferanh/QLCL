@@ -17,8 +17,12 @@ class AdminController extends Controller
             'title'=> 'Đăng nhập Admin'
         ]);
     }
-    public function home(){
-        return view('home');
+    public function home(Request $request){
+        $mang = [
+            'title' => $request['title'],
+            'is_admin' => $request['is_admin']
+        ];
+        return view('home',$mang);
     }
     public function store(Request $request){
         $this->validate($request,[
