@@ -8,7 +8,7 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  <img class="animation__shake" src="/PNG/header_logo.jpg"  height="200" width="500">
   </div>
 
   <!-- Navbar -->
@@ -45,9 +45,6 @@
           </form>
         </div>
       </li>
-
-
-
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -56,7 +53,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="/PNG/header_logo.jpg"  style="opacity: .8"  height="50" width="230">
     </a>
     <!-- Sidebar -->
     <ul class="sidebar">
