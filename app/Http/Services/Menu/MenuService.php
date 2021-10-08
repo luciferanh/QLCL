@@ -27,5 +27,25 @@ class MenuService
     {
         return User::orderbyDesc('id')->paginate(20);
     }
+    public function update($request,$menu) : bool
+    {
+        $menu->name =(string) $request->input('name');
+        $menu->email =(string)  $request->input('email');
+        $menu->is_admin =(string) $request->input('is_admin');
+        $menu->password =(string) bcrypt($request->input('password'));
+        $menu->save();
+        Session::flash('success','Cập nhập thành công');
+        return true;
+    }
+
+    public function destroy($request)
+    {   
+        $id=(int) $request->input('id');
+        $menu=User::where('id',$id)->first();
+        if($menu){
+            return User::where('id',$id)->delete();
+        }
+        return false;
+    }
 
 }

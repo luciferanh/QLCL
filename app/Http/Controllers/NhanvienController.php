@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\Menu\CreateNV;
 use App\Http\Services\Menu\MenuService;
+use App\Models\User;
 
 class NhanvienController extends Controller
 {
@@ -29,6 +30,32 @@ class NhanvienController extends Controller
             'title' =>'Danh sách nhân viên',
             'menus' => $this->menuService->getAll(),
             'is_admin'=>'1'
+        ]);
+    }
+    public function show(User $menu)
+    {
+        return view('admin.NhanVien.edit',[
+            'title' =>'Chỉnh sửa thông tin nhân viên'.$menu->name,
+            'menu' => $menu,
+            'is_admin'=>'1'
+        ]);
+    }
+    public function update(User $menu,CreateNV $request )
+    {
+        $this->menuService->update($request,$menu);
+        return redirect('/admin/list');
+    }
+    public function destroy(Request $request)
+    {
+        $result=$this->menuService->destroy($request);
+        if($result){
+            return response()->json([
+                'error'=>false,
+                'message'=>'Xóa thành công '
+            ]);
+        }
+        return response()->json([
+            'error'=>true
         ]);
     }
 }
