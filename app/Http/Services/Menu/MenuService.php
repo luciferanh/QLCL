@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Session;
 class MenuService
 {
     public function create($request)
-    { 
+    {
        try{ User::create([
             'name'=>(string) $request->input('name'),
             'email'=>(string)  $request->input('email'),
@@ -16,11 +16,16 @@ class MenuService
         ]);
         Session::flash('success',"Tạo Thành Công ");
     }catch(\Exception $err){
-        Session::flash('error',$er->getMessage());
+        Session::flash('error',$err->getMessage());
         return false;
     }
     return true;
-    
+
+    }
+
+    public function getAll()
+    {
+        return User::orderbyDesc('id')->paginate(20);
     }
 
 }

@@ -14,7 +14,7 @@ class NhanvienController extends Controller
         $this->menuService = $menuService;
     }
     public function create(){
-        
+
         return view('admin.themnv',[
             'title'=> 'Them nhan vien moi',
             'is_admin'=>'1'
@@ -23,6 +23,13 @@ class NhanvienController extends Controller
     public function up(CreateNV $request){
         $result= $this->menuService->create($request);
         return redirect()->back();
+    }
+    public function index(){
+        return view('admin.NhanVien.list',[
+            'title' =>'Danh sách nhân viên',
+            'menus' => $this->menuService->getAll(),
+            'is_admin'=>'1'
+        ]);
     }
 }
 

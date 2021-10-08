@@ -15,5 +15,6 @@ Route::middleware(['auth'])->group(function(){
         Route::get('home',[AdminController::class, 'home'])->name('admin');
         Route::get('add',[NhanvienController::class, 'create']);
         Route::post('add',[NhanvienController::class, 'up']);
+        Route::get('list',[NhanvienController::class, 'index']);
     });
 });

@@ -4,7 +4,7 @@
 @include('admin.layout.head')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+<nav class="wrapper">
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
@@ -59,7 +59,7 @@
       <img src="dist/img/AdminLTELogo.png" class="brand-image img-circle elevation-3" style="opacity: .8">
     </a>
     <!-- Sidebar -->
-    <div class="sidebar">
+    <ul class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
@@ -82,15 +82,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./add" class="nav-link active">
+                <a href="./add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm nhân viên</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="./list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
+                  <p>Xem danh sách nhân viên</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -142,24 +142,27 @@
               </li>
             </ul>
           </li>
-              <!-- /.card-header -->
-              <div class="card-body pt-0">
-                <!--The calendar -->
-                <div id="calendar" style="width: 100%"></div>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </section>
-          <!-- right col -->
-        </div>
+
+        </ul>
         <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
+      </nav><!-- /.container-fluid -->
+    </ul>
     <!-- /.content -->
-  </div>
+  </aside>
 <!-- /.content-wrapper -->
-  @yield('content')
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+            @yield('content')
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
