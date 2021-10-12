@@ -27,8 +27,7 @@ class CreateNV extends FormRequest
             'name'=>'required',
             'email'=>'required',
             'password'=>'required',
-            'is_admin'=>'required'
         ];
     }
-    
+
 }

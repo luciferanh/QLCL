@@ -16,8 +16,13 @@ class CreateNhanviensTable extends Migration
         Schema::create('nhanviens', function (Blueprint $table) {
             $table->id();
             $table->string('hoten');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
+            $table->string('is_admin');
+            $table->string('sdt');
+            $table->timestamp('date_start')->nullable();
+
+            $table->string('chuc_vu');
             $table->timestamps();
         });
     }

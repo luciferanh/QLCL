@@ -83,15 +83,9 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./list" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Xem danh sách nhân viên</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a href="./index3.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v3</p>
+                                    <p>Thêm Project cho NV</p>
                                 </a>
                             </li>
                         </ul>

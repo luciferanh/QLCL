@@ -2,26 +2,22 @@
 
 @section('content')
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-          @include('admin.layout.alert')
+
+
         <div class="row">
           <!-- left column -->
           <div class="col-md-12">
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Them nhan vien moi</h3>
-                
+                <h3 class="card-title">Chỉnh sửa nhân viên</h3>
+
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form action="" method="post">
                 <div class="card-body">
-                    
+
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
                     <input class="form-control" name="name" value="{{$menu->name}}" id="name" placeholder="Enter name">
@@ -36,7 +32,10 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Quyền hạn</label>
-                    <input class="form-control" name="is_admin" id="is_admin"  value="{{$menu->is_admin}}"  placeholder="1 là Admin , 2 là User">
+                      <select class="form-control" name="is_admin" id="is_admin">
+                          <option value="'2'">Nhân Viên</option>
+                          <option value="'1'">Admin</option>
+                      </select>
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -56,11 +55,6 @@
           <!--/.col (right) -->
         </div>
         <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
+
 @endsection

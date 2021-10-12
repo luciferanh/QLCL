@@ -5,6 +5,7 @@ use App\Http\Controllers\NhanvienController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+/*    dd(bcrypt('123456'));*/
     return view('welcome');
 });
 Route::get('admin/login', [AdminController::class,'index']);

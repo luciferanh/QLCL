@@ -12,6 +12,7 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
+            @include('admin.layout.alert')
             @yield('content')
                 <!-- /.row -->
             </div><!-- /.container-fluid -->

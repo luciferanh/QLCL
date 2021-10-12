@@ -12,4 +12,9 @@ class CheckAdminService
         $user = User::select('is_admin')->where('email', $mang['email'])->first()->is_admin;
         return $user;
     }
+    public function getAll()
+    {
+        return User::orderbyDesc('id')->paginate(20);
+    }
+
 }

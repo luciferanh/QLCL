@@ -19,10 +19,20 @@ class AdminController extends Controller
     }
     public function home(Request $request){
         $mang = [
-            'title' => $request['title'],
+            'title' =>$request['title'],
             'is_admin' => $request['is_admin']
         ];
-        return view('home',$mang);
+        if($mang['is_admin']=='2'){
+            return view('home',$mang);
+        }
+        else{
+            return view('admin.NhanVien.list',[
+                'title' => $request['title'],
+                'menus' => $this->check_admin->getAll(),
+                'is_admin'=> $request['is_admin']
+            ]);
+        }
+
     }
     public function store(Request $request){
         $this->validate($request,[
@@ -45,5 +55,5 @@ class AdminController extends Controller
         $request->session()->flash('error', 'Email hoặc password không đúng');
         return redirect()->back();
     }
-   
+
 }
