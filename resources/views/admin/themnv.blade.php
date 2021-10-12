@@ -3,10 +3,7 @@
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
+
           @include('admin.layout.alert')
         <div class="row">
           <!-- left column -->
@@ -15,13 +12,13 @@
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Them nhan vien moi</h3>
-                
+
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form action="" method="post">
                 <div class="card-body">
-                    
+
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
                     <input class="form-control" name="name" id="name" placeholder="Enter name">
@@ -56,10 +53,6 @@
           <!--/.col (right) -->
         </div>
         <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
   <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->
