@@ -18,7 +18,6 @@ class NhanvienController extends Controller
 
         return view('admin.themnv',[
             'title'=> 'Them nhan vien moi',
-            'is_admin'=>'1'
         ]);
     }
     public function up(CreateNV $request){
@@ -29,7 +28,6 @@ class NhanvienController extends Controller
         return view('admin.NhanVien.list',[
             'title' =>'Danh sách nhân viên',
             'menus' => $this->menuService->getAll(),
-            'is_admin'=>'1'
         ]);
     }
     public function show(User $menu)

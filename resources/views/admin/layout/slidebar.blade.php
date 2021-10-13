@@ -4,7 +4,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/admin/home" class="brand-link">
         <img src="/PNG/header_logo.jpg"  style="opacity: .8"  height="50" width="230">
     </a>
     <!-- Sidebar -->
@@ -12,7 +12,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
-                <a href="#" class="d-block">SORIMACHI</a>
+                <a href="/admin/home" class="d-block">SORIMACHI</a>
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -31,15 +31,21 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./add" class="nav-link">
+                                <a href="/admin/home" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm nhân viên</p>
+                                    <p>Nhân viên</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="./index3.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm Project cho NV</p>
+                                    <p>Dự án</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/admin/bophan" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Bộ phận</p>
                                 </a>
                             </li>
                         </ul>

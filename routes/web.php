@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BoPhanController;
 use App\Http\Controllers\NhanvienController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,5 +23,9 @@ Route::middleware(['auth'])->group(function(){
         Route::get('edit/{menu}',[NhanvienController::class, 'show']);
         Route::post('edit/{menu}',[NhanvienController::class, 'update']);
         Route::DELETE('destroy',[NhanvienController::class, 'destroy']);
+
+        #Bo Phan
+        Route::get('bophan',[BoPhanController::class, 'index']);
+        Route::get('bp-add',[BoPhanController::class, 'create']);
     });
 });

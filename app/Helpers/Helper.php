@@ -26,7 +26,7 @@ class Helper
         }
         return $html;
     }
-    public static function active($active ='1'){
-        return $active == '2' ? '<span class="btn btn-danger btn-xs">NO</span>':'<span class="btn btn-success btn-xs">YES</span>';
+    public static function active($active ){
+        return $active == '1' ? '<span class="btn btn-success btn-xs">YES</span>':'<span class="btn btn-danger btn-xs">NO</span>';
     }
 }
