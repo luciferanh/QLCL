@@ -12,7 +12,10 @@ class MenuService
             'name'=>(string) $request->input('name'),
             'email'=>(string)  $request->input('email'),
             'is_admin'=>(string) $request->input('is_admin'),
-            'password'=>(string) bcrypt($request->input('password'))
+            'password' =>(string) bcrypt($request->input('password')),
+           'sdt'=>(string) $request->input('sdt'),
+           'date_start'=>(string)  date('Y-m-d',strtotime($request->input('date_start'))),
+           'chuc_vu'=>(string) $request->input('chuc_vu')
         ]);
         Session::flash('success',"Tạo Thành Công ");
     }catch(\Exception $err){
@@ -33,13 +36,16 @@ class MenuService
         $menu->email =(string)  $request->input('email');
         $menu->is_admin =(string) $request->input('is_admin');
         $menu->password =(string) bcrypt($request->input('password'));
+        $menu->sdt=(string) $request->input('sdt');
+        $menu->date_start=(string) $request->input('date_start');
+        $menu->chuc_vu=(string) $request->input('chuc_vu');
         $menu->save();
         Session::flash('success','Cập nhập thành công');
         return true;
     }
 
     public function destroy($request)
-    {   
+    {
         $id=(int) $request->input('id');
         $menu=User::where('id',$id)->first();
         if($menu){

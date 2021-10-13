@@ -37,7 +37,6 @@ class NhanvienController extends Controller
         return view('admin.NhanVien.edit',[
             'title' =>'Chỉnh sửa thông tin nhân viên'.$menu->name,
             'menu' => $menu,
-            'is_admin'=>'1'
         ]);
     }
     public function update(User $menu,CreateNV $request )

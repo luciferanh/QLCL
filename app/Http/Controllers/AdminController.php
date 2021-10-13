@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Service\CheckAdminService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
@@ -24,6 +25,7 @@ class AdminController extends Controller
         ];
         if($mang['is_admin']=='2'){
             return view('home',$mang);
+
         }
         else{
             return view('admin.NhanVien.list',[
@@ -45,10 +47,11 @@ class AdminController extends Controller
         ];
         $is_true=Auth::attempt($mang);
         if($is_true == true){
+
             $is_admin = $this->check_admin->get($mang);
+            Session::put('is_admin',$is_admin);
             return redirect()->route('admin',[
                 'title' => 'Home',
-                'is_admin' => $is_admin
             ]);
 
         }

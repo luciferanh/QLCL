@@ -23,7 +23,7 @@ class User extends Authenticatable
         'is_admin',
         'password',
         'sdt',
-        'date_start',
+        'date_start' => 'datetime:d/m/Y',
         'chuc_vu'
     ];
 

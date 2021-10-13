@@ -39,7 +39,7 @@
                   </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Số điện thoại</label>
-                        <input type="tel" name="sdt" class="form-control" id="sdt" placeholder="Enter email">
+                        <input type="tel" name="sdt" class="form-control" id="sdt" placeholder="Enter sdt">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Chức vụ</label>

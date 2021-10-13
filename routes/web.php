@@ -18,7 +18,7 @@ Route::middleware(['auth'])->group(function(){
         Route::get('add',[NhanvienController::class, 'create']);
         Route::post('add',[NhanvienController::class, 'up']);
         #Xem danh sách nhân viên
-        Route::get('list',[NhanvienController::class, 'index']);
+
         Route::get('edit/{menu}',[NhanvienController::class, 'show']);
         Route::post('edit/{menu}',[NhanvienController::class, 'update']);
         Route::DELETE('destroy',[NhanvienController::class, 'destroy']);
