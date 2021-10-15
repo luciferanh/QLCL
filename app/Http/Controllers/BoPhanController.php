@@ -24,4 +24,11 @@ class BoPhanController extends Controller
             'title'=> 'Them nhan vien moi',
         ]);
     }
+    public function up(Request $request){
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $this->menuService->create($request);
+        return redirect()->back();
+    }
 }

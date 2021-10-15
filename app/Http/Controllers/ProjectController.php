@@ -13,14 +13,17 @@ class ProjectController extends Controller
         $this->projectService = $projectService;
     }
     public function index(){
+
         return view('admin.Project.list',[
             'title'=> 'Project',
-            'menus'=> $this->projectService->getAll()
+            'menus'=> $this->projectService->get()
         ]);
     }
     public function create(){
+        $bophans=$this->projectService->show_bophan();
         return view('admin.Project.AddProject',[
-            'title'=> 'Project'
+            'title'=> 'Project',
+            'bophans' => $bophans,
         ]);
     }
     public function up(CreateProject $request){
@@ -40,5 +43,11 @@ class ProjectController extends Controller
             'error'=>true
         ]);
     }
-       
+    public function setnv($id){
+        $pj = $this->projectService->getProject($id);
+        return view('admin.Project.AddNV',[
+            'title' =>$pj->name,
+        ]);
+    }
+
 }

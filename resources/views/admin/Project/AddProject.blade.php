@@ -22,6 +22,14 @@
                     <label for="exampleInputEmail1">Name</label>
                     <input class="form-control" name="name" id="name" placeholder="Enter name">
                   </div>
+                    <div class="form-group">
+                        <label for="exampleInputbophan_id">Bộ phận</label>
+                        <select class="form-control" name="bophan_id" id="bophan_id">
+                            @foreach($bophans as $key => $bophan)
+                            <option value="{{$bophan->id}}">{{$bophan->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Description</label>
                     <input class="form-control" name="description" id="description" placeholder="Enter Description">
@@ -32,13 +40,14 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Ngày bắt đầu</label> <br/>
-                    <input class="datepicker" name="date_start" id="date_start" data-date-format="dd/mm/yyyy" placeholder="dd/mm/yyyy" >
+                    <input class="datepicker" name="date_start" id="date_start" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Ngày kết thúc</label> <br/>
-                    <input class="datepicker" name="date_end" id="date_end" data-date-format="dd/mm/yyyy" placeholder="dd/mm/yyyy" >
+                    <input class="datepicker" name="date_end" id="date_end" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
                   </div>
                 </div>
+
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>

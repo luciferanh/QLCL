@@ -13,6 +13,10 @@ class Project extends Model
         'description',
         'content',
         'date_start',
-        'date_end'   
+        'date_end',
+        'bophan_id'
     ];
+    public function bophan(){
+        return $this->hasOne(BoPhan::class,'id','bophan_id');
+    }
 }

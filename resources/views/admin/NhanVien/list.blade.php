@@ -4,13 +4,16 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
+        <a href="/admin/home" class="nav-link">Danh sách</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
         <a href="./add" class="nav-link">Thêm</a>
     </li>
 @endsection
 
 
 @section('content')
-    <table >
+    <table class="table">
         <thead>
         <tr>
             <th style="width: 50px">ID</th>

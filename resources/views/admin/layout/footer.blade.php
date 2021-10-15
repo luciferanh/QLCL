@@ -35,5 +35,6 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/template/dist/js/pages/dashboard.js"></script>
 <script src="/template/js/main.js"></script>
+<script src="/template/plugins/bs-stepper/js/bs-stepper.min.js"></script>
 @yield('footer')
 

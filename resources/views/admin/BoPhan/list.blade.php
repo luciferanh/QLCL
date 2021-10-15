@@ -4,19 +4,20 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
+        <a href="./bophan" class="nav-link">Danh sách</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
         <a href="./bp-add" class="nav-link">Thêm</a>
     </li>
 @endsection
 
 
 @section('content')
-    <table >
+    <table class="table">
         <thead>
         <tr>
             <th style="width: 50px">ID</th>
             <th style="width: 500px">Tên</th>
-            <th style="width: 500px">Email</th>
-            <<th style="width: 500px" >Quyền admin</th>>
             <th style="width: 100px;">&nbsp;</th>
         </tr>
         </thead>
@@ -25,12 +26,8 @@
             <tr>
                 <th>{{$menu->id}}</th>
                 <th>{{$menu->name}}</th>
-                <th>{{$menu->email}}</th>
-                <th>{!!  \App\Helpers\Helper::active($menu->is_admin)!!}</th>
                 <th>
                     <a class="btn btn-primary btn-sm" href="/admin/edit/{{$menu->id}}"><i class="fas fa-edit"></i></a>
-                    <a class="btn btn-danger btn-sm" href="#"
-                       onclick="removeRow({{$menu->id}},'/admin/destroy')"> <i class="fas fa-trash"></i></a>
                 </th>
             </tr>
         @endforeach
