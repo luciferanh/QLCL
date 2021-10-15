@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BoPhanController;
 use App\Http\Controllers\NhanvienController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,5 +28,10 @@ Route::middleware(['auth'])->group(function(){
         #Bo Phan
         Route::get('bophan',[BoPhanController::class, 'index']);
         Route::get('bp-add',[BoPhanController::class, 'create']);
+        #project
+        Route::get('project',[ProjectController::class, 'index']);
+        Route::get('project/add',[ProjectController::class, 'create']);
+        Route::post('project/add',[ProjectController::class, 'up']);
+        Route::DELETE('destroy1',[ProjectController::class, 'destroy']);
     });
 });
