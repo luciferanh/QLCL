@@ -45,6 +45,8 @@ class ProjectController extends Controller
     }
     public function setnv($id){
         $pj = $this->projectService->getProject($id);
+        $nv_in_pj = $this->projectService->getNV($id);
+        $nv_hien_co = $this->projectService->getNV($id);
         return view('admin.Project.AddNV',[
             'title' =>$pj->name,
         ]);
