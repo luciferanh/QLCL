@@ -26,22 +26,14 @@
         </div>
         <div class="row" style="margin-bottom: 40px;">
             <div class="col">
-                <form id="demoform">
+                <form method="post" action="" id="demoform">
                     <select multiple="multiple" size="10" name="duallistbox_demo1[]" title="duallistbox_demo1[]">
-                        <option value="payee1">Aviva Insurance - Business - 987654</option>
-                        <option value="payee2">Bell Mobility - 66853 (John Smith)</option>
-                        <option value="payee3">Bell Mobility - 75432 (Jane Smith)</option>
-                        <option value="payee4">Bell Mobility - 98765 (Jim Smith)</option>
-                        <option value="payee5">Canadian Tire Commercial Mastercard - **** 5525</option>
-                        <option value="payee6">Canadian Tire Mastercard - **** 3158 (President's Card)</option>
-                        <option value="payee7">FedEx Express Canada - 54321</option>
-                        <option value="payee8">Lowes Canada - 12345</option>
-                        <option value="payee9">Mastercard, PC Financial - **** 5535</option>
-                        <option value="payee10">Qtrade Investor - 12345</option>
-                        <option value="payee11" selected="selected">Servus Mastercard - **** 5545</option>
-                        <option value="payee12">Telus - 123456787 (Calagary  Office)</option>
-                        <option value="payee13">Telus - 123456788 (Edmonton NW Office)</option>
-                        <option value="payee14">Telus - 123456789 (Edmonton SE Office)</option>
+                        @foreach($nv_hien_co as $key => $nv)
+                            <option value="{{$nv->id}}">{{$nv->name}}</option>
+                        @endforeach
+                        @foreach($nv_in_pj as $key => $nv)
+                           <div class="form-group"><option value="{{$nv->nhanvien->id}}" selected="selected" >{{$nv->nhanvien->name}}</option></div>
+                        @endforeach
                     </select>
                     <br>
                     <div class="row">
@@ -49,6 +41,7 @@
                             <button type="submit" class="btn btn-primary w-100">Thêm Nhân Viên</button>
                         </div>
                     </div>
+                    @csrf
                 </form>
 
             </div>
@@ -63,7 +56,8 @@
             removeAllLabel: 'Remove all'
         });
         $("#demoform").submit(function() {
-            alert($('[name="duallistbox_demo1[]"]').val());
+
+            alert($('Nhận : [name="duallistbox_demo1[]"]').val());
             return false;
         });
     </script>

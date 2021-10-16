@@ -36,6 +36,7 @@ Route::middleware(['auth'])->group(function(){
             Route::get('add',[ProjectController::class, 'create']);
             Route::post('add',[ProjectController::class, 'up']);
             Route::get('setnv/{menu}',[ProjectController::class, 'setnv']);
+            Route::post('setnv/{menu}',[ProjectController::class, 'up_nv']);
 
         });
         Route::DELETE('destroy1',[ProjectController::class, 'destroy']);

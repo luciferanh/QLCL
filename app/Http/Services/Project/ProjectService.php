@@ -3,7 +3,9 @@
 namespace app\Http\Services\Project;
 
 use App\Models\BoPhan;
+use App\Models\NhanVienProJect;
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Support\Facades\Session;
 class ProjectService
 {
@@ -57,6 +59,16 @@ class ProjectService
     {
         return Project::where('id',$id)->first();
 
+    }
+
+    public function getNVPJ($id)
+    {
+        return NhanVienProJect::where('id',$id)->with('nhanvien');
+    }
+
+    public function getNV()
+    {
+        return User::orderbyDesc('id')->where('is_admin',"'2'")->paginate(20);
     }
 
 }

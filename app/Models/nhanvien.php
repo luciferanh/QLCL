@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class nhanvien extends Model
 {
     use HasFactory;
+
 }
