@@ -13,9 +13,9 @@ class NhanVienProJect extends Model
         'nv_id'
     ];
     public function nhanvien(){
-        return $this->hasMany(User::class,'id','nv_id');
+        return $this->hasOne(User::class,'id','nv_id');
     }
     public function project(){
-        return $this->hasMany(Project::class,'id','project_id');
+        return $this->hasOne(Project::class,'id','project_id');
     }
 }

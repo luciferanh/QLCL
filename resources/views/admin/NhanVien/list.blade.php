@@ -9,6 +9,9 @@
     <li class="nav-item d-none d-sm-inline-block">
         <a href="./add" class="nav-link">Thêm</a>
     </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="./nv-pj" class="nav-link">Nhân viên trong Project</a>
+    </li>
 @endsection
 
 

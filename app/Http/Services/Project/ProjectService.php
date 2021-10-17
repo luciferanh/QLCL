@@ -71,4 +71,22 @@ class ProjectService
         return User::orderbyDesc('id')->where('is_admin',"'2'")->paginate(20);
     }
 
+    public function setNVPJ($id_pj, $id_nvs)
+    {
+        try{
+           foreach($id_nvs as $key=>$value ){
+               NhanVienProJect::create([
+                   'project_id'=>(string) $id_pj,
+                   'nv_id'=>(string) $value,
+               ]);
+           }
+
+            Session::flash('success',"Tạo Thành Công ");
+        }catch(\Exception $err){
+            Session::flash('error',$err->getMessage());
+            return false;
+        }
+        return true;
+    }
+
 }
