@@ -17,7 +17,7 @@ class ProjectService
             'name'=>(string) $request->input('name'),
             'description'=>(string)  $request->input('description'),
             'content'=>(string) $request->input('content'),
-               'bophan_id'=> $request->input('bophan_id'),
+            'bophan_id'=> $request->input('bophan_id'),
            'date_start'=>(string)  date('Y-m-d',strtotime($request->input('date_start'))),
            'date_end'=>(string)  date('Y-m-d',strtotime($request->input('date_end')))
         ]);

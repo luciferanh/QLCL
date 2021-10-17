@@ -21,6 +21,7 @@ class NhanvienController extends Controller
         ]);
     }
     public function up(CreateNV $request){
+        
         $result= $this->menuService->create($request);
         return redirect()->back();
     }
@@ -40,7 +41,7 @@ class NhanvienController extends Controller
     public function update(User $menu,CreateNV $request )
     {
         $this->menuService->update($request,$menu);
-        return redirect('/admin/list');
+        return redirect('/admin/home');
     }
     public function destroy(Request $request)
     {

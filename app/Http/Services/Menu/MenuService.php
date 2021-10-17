@@ -14,7 +14,7 @@ class MenuService
             'is_admin'=>(string) $request->input('is_admin'),
             'password' =>(string) bcrypt($request->input('password')),
            'sdt'=>(string) $request->input('sdt'),
-           'date_start'=>(string)  date('Y-m-d',strtotime($request->input('date_start'))),
+           'date_start'=>(string) date('Y-m-d',strtotime($request->input('date_start'))),
            'chuc_vu'=>(string) $request->input('chuc_vu')
         ]);
         Session::flash('success',"Tạo Thành Công ");
@@ -35,9 +35,9 @@ class MenuService
         $menu->name =(string) $request->input('name');
         $menu->email =(string)  $request->input('email');
         $menu->is_admin =(string) $request->input('is_admin');
-        $menu->password =(string) bcrypt($request->input('password'));
+        $menu->password =(string) $menu->password;
         $menu->sdt=(string) $request->input('sdt');
-        $menu->date_start=(string) $request->input('date_start');
+        $menu->date_start=(string) date('Y-m-d',strtotime($request->input('date_start')));
         $menu->chuc_vu=(string) $request->input('chuc_vu');
         $menu->save();
         Session::flash('success','Cập nhập thành công');

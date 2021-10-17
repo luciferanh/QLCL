@@ -47,7 +47,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Ngày làm việc</label> <br/>
-                        <input class="datepicker" name="date_start" id="date_start" data-date-format="dd/mm/yyyy" placeholder="dd/mm/yyyy" >
+                        <input class="datepicker" name="date_start" id="date_start" value="{!!date('d-m-Y')!!}" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
                     </div>
                 </div>
                 <!-- /.card-body -->

@@ -26,7 +26,7 @@
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" name="email" value="{{$menu->email}}"  class="form-control" id="email" placeholder="Enter email">
                   </div>
-
+                    <input hidden  type="password" name="password" value="0"  class="form-control" id="password" >
                   <div class="form-group">
                       <label >Quyền hạn </label>
                       <select class="form-control" name="is_admin" id="is_admin" value="{{$menu->is_admin}}">
