@@ -51,7 +51,7 @@ class ProjectService
     }
     public function get()
     {
-        return Project::with('bophan')->orderbyDesc('id')->paginate(20);
+        return Project::with('bophan')->with('sl_nv')->orderbyDesc('id')->paginate(20);
 
     }
 
@@ -63,7 +63,8 @@ class ProjectService
 
     public function getNVPJ($id)
     {
-        return NhanVienProJect::where('id',$id)->with('nhanvien');
+        #Du an Cần Sa (id =3)
+        return NhanVienProJect::with('nhanvien')->orderbyDesc('id')->where('project_id',$id)->paginate(20);
     }
 
     public function getNV()

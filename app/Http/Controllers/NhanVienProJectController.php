@@ -11,7 +11,7 @@ class NhanVienProJectController extends Controller
 {
 
     public function SetNV_PJ(){
-        $danh_sach_nv_pj=NhanVienProJect::orderbyDesc('project_id')->with('nhanvien')->with('project')->paginate(20);
+        $danh_sach_nv_pj=NhanVienProJect::orderbyDesc('nv_id')->with('nhanvien')->with('project')->paginate(20);
         $chuan_nangsuat = ChuanNangSuat::orderBy('id','asc')->paginate(20);
 
         return view('admin.NhanVien.list_NV_PJ',[

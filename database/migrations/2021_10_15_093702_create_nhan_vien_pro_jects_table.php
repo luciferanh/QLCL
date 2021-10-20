@@ -17,6 +17,8 @@ class CreateNhanVienProJectsTable extends Migration
             $table->id();
             $table->integer('nv_id');
             $table->integer('project_id');
+            $table->integer('nang_suat');
+            $table->integer('is_quanly');
             $table->timestamps();
         });
     }

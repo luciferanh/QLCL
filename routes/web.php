@@ -6,11 +6,13 @@ use App\Http\Controllers\NhanvienController;
 use App\Http\Controllers\NhanVienProJectController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
 //    dd(bcrypt('123456'));
     return view('welcome');
 });
+
 Route::get('admin/login', [AdminController::class,'index']);
 Route::post('admin/store', [AdminController::class,'store']);
 
@@ -18,6 +20,8 @@ Route::middleware(['auth'])->group(function(){
     Route::prefix('admin') ->group(function(){
         #home và thêm nhân viên
         Route::get('home',[AdminController::class, 'home'])->name('admin');
+
+
         Route::get('add',[NhanvienController::class, 'create']);
         Route::post('add',[NhanvienController::class, 'up']);
         #Xem danh sách nhân viên
@@ -42,5 +46,8 @@ Route::middleware(['auth'])->group(function(){
         Route::DELETE('destroy1',[ProjectController::class, 'destroy']);
         #Du an và nhân viên
         Route::get('nv-pj',[NhanVienProJectController::class, 'SetNV_PJ']);
+
+
+
     });
 });

@@ -34,14 +34,14 @@
                 <th>{{$menu->nhanvien->name}}</th>
                 <th>{{$menu->project->name}}</th>
                 <th>1</th>
-                @for($t=1;$t<=12;$t++)
+                @for( $t=1;$t<=12;$t++)
 
                         @if( date('m',strtotime($menu->nhanvien->date_start))>$t)
                             <th></th>
                         @endif
                         @if( date('m',strtotime($menu->nhanvien->date_start))<=$t)
                                 @foreach($nss as $key => $ns)
-                                    @if($t-date('m',strtotime($menu->nhanvien->date_start))==$ns->thang)
+                                    @if($t-date('m',strtotime($menu->nhanvien->date_start))+1==$ns->thang)
                                      <th>{{$ns->nangsuat}}</th>
                                     @endif
                                 @endforeach
@@ -53,5 +53,6 @@
         @endforeach
         </tbody>
     </table>
-{{--    <div class="card-footer clearfix">    {!!$menus->links()!!}</div>--}}
+    <div class="card-footer clearfix">    {!!$nvs->links()!!}</div>
+    <div class="card-footer clearfix">    {!!$nss->links()!!}</div>
 @endsection

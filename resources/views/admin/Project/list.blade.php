@@ -24,6 +24,7 @@
             <th >Bộ Phận</th>
             <th >Ngày Bắt đầu</th>
             <<th  >Ngày Kết thúc</th>>
+            <<th  >Số người đang làm</th>>
             <th >&nbsp;</th>
         </tr>
         </thead>
@@ -35,6 +36,7 @@
                 <th>{{$menu->bophan->name}}</th>
                 <th>{{$menu->date_start}}</th>
                 <th>{{$menu->date_end}}</th>
+                <th>{{$menu->sl_nv->count()}}</th>
                 <th>
                     <a class="btn btn-primary btn-sm" href="/admin/project/setnv/{{$menu->id}}"><i class="fas fa-search"></i></a>
                     <a class="btn btn-primary btn-sm" href="/admin/project/edit/{{$menu->id}}"><i class="fas fa-edit"></i></a>

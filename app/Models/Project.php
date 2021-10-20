@@ -19,4 +19,7 @@ class Project extends Model
     public function bophan(){
         return $this->hasOne(BoPhan::class,'id','bophan_id');
     }
+    public function sl_nv(){
+        return $this->hasMany(NhanVienProJect::class,'project_id','id');
+    }
 }

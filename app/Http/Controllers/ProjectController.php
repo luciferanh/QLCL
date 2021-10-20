@@ -48,7 +48,6 @@ class ProjectController extends Controller
         $pj = $this->projectService->getProject($id);
         $nv_hien_co = $this->projectService->getNV();
         $nv_in_pj = $this->projectService->getNVPJ($id);
-
         return view('admin.Project.AddNV',[
             'title' =>$pj->name,
             'nv_hien_co' => $nv_hien_co,
