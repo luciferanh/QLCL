@@ -69,16 +69,22 @@ class ProjectService
 
     public function getNV()
     {
-        return User::orderbyDesc('id')->where('is_admin',"'2'")->paginate(20);
+        return User::orderbyDesc('id')->where('is_admin',2)->paginate(20);
     }
 
-    public function setNVPJ($id_pj, $id_nvs)
+    public function setNVPJ($id_pj, $id_nvs,$id_ld)
     {
+
+//        dd($id_pj,$id_nvs,$id_ld,$id_nvs[0]===$id_ld);
         try{
+            NhanVienProJect::where('project_id',$id_pj)->delete();
+
            foreach($id_nvs as $key=>$value ){
                NhanVienProJect::create([
-                   'project_id'=>(string) $id_pj,
                    'nv_id'=>(string) $value,
+                   'project_id'=>(string) $id_pj,
+                   'nang_suat'=>(string)0,
+                   'is_quanly' =>(string)($value===$id_ld)?1:0
                ]);
            }
 

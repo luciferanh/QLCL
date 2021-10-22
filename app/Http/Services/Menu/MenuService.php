@@ -2,6 +2,7 @@
 
 namespace app\Http\Services\Menu;
 use App\Models\ngaycong;
+use App\Models\NhanVienProJect;
 use app\Models\User;
 use Illuminate\Support\Facades\Session;
 
@@ -62,14 +63,14 @@ class MenuService
 
     public function createngaycong($request)
     {  $mang=['1'=>$request['T1'],'2'=>$request['T2'],'3'=>$request['T3'],'4'=>$request['T4'],'5'=>$request['T5'],'6'=>$request['T6'],'7'=>$request['T7'],'8'=>$request['T8'],'9'=>$request['T9'],'10'=>$request['T10'],'11'=>$request['T11'],'12'=>$request['T12']];
-        try{  
-        foreach ($mang as $key => $value) { 
+        try{
+        foreach ($mang as $key => $value) {
         ngaycong::create([
             'nam'=>(string)  $request->input('nam'),
             'thang'=>(string)  $key,
-            'ngay'=>(string)  $value,     
+            'ngay'=>(string)  $value,
         ]);
-        }    
+        }
         Session::flash('success',"Tạo Thành Công ");
     }catch(\Exception $err){
         Session::flash('error',$err->getMessage());
@@ -78,6 +79,13 @@ class MenuService
     return true;
 
     }
-  
+
+    public function TimProJect($id)
+    {
+        return NhanVienProJect::where('nv_id',$id)->with('project')->orderbyDesc('id')->paginate(20);
+
+
+    }
+
 
 }

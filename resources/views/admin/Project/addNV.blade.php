@@ -50,10 +50,6 @@
 
                     <br>
                     <div class="form-group">
-                        <label for="description">Năng suất</label>
-                        <input class="form-control" name="description" id="description" placeholder="Nhập năng suất cho mỗi người"/>
-                    </div>
-                    <div class="form-group">
                         <label for="exampleInputbophan_id">Chọn leader</label>
                         <select class="form-control" name="leader_id" id="leader_id"  >
 
@@ -96,6 +92,11 @@
                     name_user[users[key]['id']] = users[key]['name'];
                 }
             }
+            $('#leader_id option').each(function() {
+
+                    $(this).remove();
+
+            });
             $.each(name_user, function(key, value) {
                 $('#leader_id')
                     .append($("<option></option>")

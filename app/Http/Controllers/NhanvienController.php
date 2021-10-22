@@ -22,7 +22,7 @@ class NhanvienController extends Controller
         ]);
     }
     public function up(CreateNV $request){
-        
+
         $result= $this->menuService->create($request);
         return redirect()->back();
     }
@@ -58,23 +58,26 @@ class NhanvienController extends Controller
         ]);
     }
     public function viewngaylam()
-    {   
+    {
         return view('admin.NhanVien.ngaylam',[
             'title'=> 'Thêm ngày làm dự kiến ',
         ]);
-        
+
     }
     public function postviewngaylam(Request $request)
-    { 
+    {
        $result= $this->menuService->createngaycong($request);
        return redirect()->back();
     }
     public function nangsuat(User $menu)
     {
+        $result= $this->menuService->TimProJect($menu->id);
+
         return view('admin.NhanVien.nangsuat',[
             'title' =>'Năng suất của nhân viên '.$menu->name,
+            'menus' => $result
         ]);
     }
-    
+
 }
 

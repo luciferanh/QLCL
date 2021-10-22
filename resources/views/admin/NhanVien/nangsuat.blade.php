@@ -19,5 +19,70 @@
 
 
 @section('content')
+    <div class="row" style="margin-top: 40px;">
+        <div class="col">
+
+            <h2>{{$title}} của các dự án</h2>
+
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th style="width: 50px">ID</th>
+            <th style="width: 500px">Tên Dự Án</th>
+            <th style="width: 500px">Chúc vụ</th>
+            <<th style="width: 500px" >Năng suất</th>>
+            <th style="width: 100px;">&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($menus as $key => $menu)
+            <tr>
+                <th>{{$menu->id}}</th>
+                <th>{{$menu->project->name}}</th>
+                <th>{{$menu->is_quanly==1?'Quản lý':'Nhân viên'}}</th>
+                <th>
+                    <input  name="nangsuat" id="nangsuat" value="{{$menu->nangsuat}}">
+                </th>
+                <th></th>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+    <div >
+        <button type="submit" class="btn btn-primary">Edit Năng Suất</button>
+    </div>
+    <div class="row" style="margin-top: 40px;">
+        @foreach($menus as $key => $menu)
+            @if($menu->is_quanly==1)
+                <div class="col">
+                    <h2>Thông số quản lý dự án {{$menu->project->name}} </h2>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        @for( $t=1;$t<=12;$t++)
+                        <th >{{$t}}月</th>
+                        @endfor
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @for( $t=1;$t<=12;$t++)
+                        <th>
+                        <input style="width: 50px;" name="thongsoquanly{{$t}}" id="thongsoquanly"/>
+                        </th>
+                    @endfor
+
+                    </tbody>
+                </table>
+            @endif
+        @endforeach
+
+    </div>
+    <div >
+        <button type="submit" class="btn btn-primary">Edit Thông số quản lý</button>
+    </div>
 
 @endsection

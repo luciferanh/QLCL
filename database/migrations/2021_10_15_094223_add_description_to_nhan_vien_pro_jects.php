@@ -15,7 +15,6 @@ class AddDescriptionToNhanVienProJects extends Migration
     {
         Schema::table('nhan_vien_pro_jects', function (Blueprint $table) {
             //
-           
         });
     }
 

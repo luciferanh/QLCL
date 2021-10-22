@@ -10,7 +10,9 @@ class NhanVienProJect extends Model
     use HasFactory;
     protected $fillable = [
         'project_id',
-        'nv_id'
+        'nv_id',
+        'nang_suat',
+        'is_quanly'
     ];
     public function nhanvien(){
         return $this->hasOne(User::class,'id','nv_id');

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
-//    dd(bcrypt('123456'));
+    dd(bcrypt('123456'));
     return view('welcome');
 });
 
@@ -25,20 +25,30 @@ Route::middleware(['auth'])->group(function(){
         Route::get('add',[NhanvienController::class, 'create']);
         Route::post('add',[NhanvienController::class, 'up']);
         #Ngày làm của nhân viên
+        //--------------------------------------------------------------------------------------------------------------------------------------
         Route::get('ngaylam',[NhanvienController::class, 'viewngaylam']);
         Route::post('ngaylam',[NhanvienController::class, 'postviewngaylam']);
-        Route::get('nangsuat/{menu}',[NhanvienController::class, 'nangsuat']);
+        //--------------------------------------------------------------------------------------------------------------------------------------
         #Xem danh sách nhân viên
+
+
+        #Năng suất của NV
+        //--------------------------------------------------------------------------------------------------------------------------------------
+        Route::get('nangsuat/{menu}',[NhanvienController::class, 'nangsuat']);
+        //--------------------------------------------------------------------------------------------------------------------------------------
 
         Route::get('edit/{menu}',[NhanvienController::class, 'show']);
         Route::post('edit/{menu}',[NhanvienController::class, 'update']);
         Route::DELETE('destroy',[NhanvienController::class, 'destroy']);
 
         #Bo Phan
+        //--------------------------------------------------------------------------------------------------------------------------------------
         Route::get('bophan',[BoPhanController::class, 'index']);
         Route::get('bp-add',[BoPhanController::class, 'create']);
         Route::post('bp-add',[BoPhanController::class, 'up']);
+        //--------------------------------------------------------------------------------------------------------------------------------------
         #project
+        //--------------------------------------------------------------------------------------------------------------------------------------
         Route::prefix('project') ->group(function() {
             Route::get('/',[ProjectController::class, 'index']);
             Route::get('add',[ProjectController::class, 'create']);
@@ -47,6 +57,7 @@ Route::middleware(['auth'])->group(function(){
             Route::post('setnv/{menu}',[ProjectController::class, 'up_nv']);
 
         });
+        //--------------------------------------------------------------------------------------------------------------------------------------
         Route::DELETE('destroy1',[ProjectController::class, 'destroy']);
         #Du an và nhân viên
         Route::get('nv-pj',[NhanVienProJectController::class, 'SetNV_PJ']);

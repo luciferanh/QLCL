@@ -32,7 +32,7 @@
               <form action="" method="post">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Năm</label>
-                    <input type="number" class="form-control" name="nam" id="nam" placeholder="Năm ">
+                    <input type="number" class="form-control" name="nam" id="nam" placeholder="Năm " >
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 1</label>
@@ -82,7 +82,7 @@
                     <label for="exampleInputEmail1">Tháng 12</label>
                     <input type="number" class="form-control" name="T12" id="T12" placeholder="Số Ngày Làm Tháng thứ 12">
                   </div>
-               
+
                 </div>
 
                 <!-- /.card-body -->

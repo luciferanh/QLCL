@@ -56,7 +56,8 @@ class ProjectController extends Controller
     }
     public function up_nv($id_pj,Request $request){
         $id_nv=$request['duallistbox_demo1'];
-        $this->projectService->setNVPJ($id_pj,$id_nv);
+        $id_ld=$request['leader_id'];
+        $this->projectService->setNVPJ($id_pj,$id_nv,$id_ld);
         return redirect()->back();
     }
 
