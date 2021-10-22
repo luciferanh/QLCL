@@ -13,10 +13,7 @@
         <a href="./nv-pj" class="nav-link">Nhân viên trong Project</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-        <a href="./listngaylam" class="nav-link">Danh sách ngày làm </a>
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-        <a href="./ngaylam" class="nav-link">Thêm ngày làm của nhân viên</a>
+        <a href="./ngaylam" class="nav-link">Thêm ngày làm Dự kiến</a>
     </li>
 @endsection
 
@@ -36,7 +33,7 @@
         @foreach($menus as $key => $menu)
             <tr>
                 <th>{{$menu->id}}</th>
-                <th>{{$menu->name}}</th>
+                <th><a href="/admin/nangsuat/{{$menu->id}}"  >{{$menu->name}}</th>
                 <th>{{$menu->email}}</th>
                 <th>{!!  \App\Helpers\Helper::active($menu->is_admin)!!}</th>
                 <th>

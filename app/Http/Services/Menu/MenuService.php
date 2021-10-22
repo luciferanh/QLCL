@@ -61,22 +61,15 @@ class MenuService
     }
 
     public function createngaycong($request)
-    {
-       try{ ngaycong::create([
-            'nv_id'=>(string) $request->input('nv_id'),
-            'thang1'=>(string)  $request->input('ngay1'),
-            'thang2'=>(string)  $request->input('ngay2'),
-            'thang3'=>(string)  $request->input('ngay3'),
-            'thang4'=>(string)  $request->input('ngay4'),
-            'thang5'=>(string)  $request->input('ngay5'),
-            'thang6'=>(string)  $request->input('ngay6'),
-            'thang7'=>(string)  $request->input('ngay7'),
-            'thang8'=>(string)  $request->input('ngay8'),
-            'thang9'=>(string)  $request->input('ngay9'),
-            'thang10'=>(string)  $request->input('ngay10'),
-            'thang11'=>(string)  $request->input('ngay11'),
-            'thang12'=>(string)  $request->input('ngay12'),        
+    {  $mang=['1'=>$request['T1'],'2'=>$request['T2'],'3'=>$request['T3'],'4'=>$request['T4'],'5'=>$request['T5'],'6'=>$request['T6'],'7'=>$request['T7'],'8'=>$request['T8'],'9'=>$request['T9'],'10'=>$request['T10'],'11'=>$request['T11'],'12'=>$request['T12']];
+        try{  
+        foreach ($mang as $key => $value) { 
+        ngaycong::create([
+            'nam'=>(string)  $request->input('nam'),
+            'thang'=>(string)  $key,
+            'ngay'=>(string)  $value,     
         ]);
+        }    
         Session::flash('success',"Tạo Thành Công ");
     }catch(\Exception $err){
         Session::flash('error',$err->getMessage());
@@ -85,9 +78,6 @@ class MenuService
     return true;
 
     }
-    public function getngaycong()
-    {
-      
-    }
+  
 
 }

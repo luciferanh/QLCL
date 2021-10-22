@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Menu\CreateNV;
 use App\Http\Services\Menu\MenuService;
 use App\Models\User;
+use App\Models\ngaycong;
 
 class NhanvienController extends Controller
 {
@@ -58,10 +59,8 @@ class NhanvienController extends Controller
     }
     public function viewngaylam()
     {   
-        $result=$this->menuService->getAllName();
         return view('admin.NhanVien.ngaylam',[
             'title'=> 'Thêm ngày làm dự kiến ',
-            'nhanvien'=>$result,
         ]);
         
     }
@@ -70,12 +69,12 @@ class NhanvienController extends Controller
        $result= $this->menuService->createngaycong($request);
        return redirect()->back();
     }
-    
-    public function viewlist(){
-    
-        return view('admin.Nhanvien.list_ngaylam',[
-            'title'=> 'Them nhan vien moi',
+    public function nangsuat(User $menu)
+    {
+        return view('admin.NhanVien.nangsuat',[
+            'title' =>'Năng suất của nhân viên '.$menu->name,
         ]);
     }
+    
 }
 

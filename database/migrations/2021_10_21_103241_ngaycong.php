@@ -15,19 +15,9 @@ class Ngaycong extends Migration
     {
         Schema::create('ngaycongs', function (Blueprint $table) {
             $table->id();
-            $table->integer("nv_id");
-            $table->integer('thang1');
-            $table->integer('thang2');
-            $table->integer('thang3');
-            $table->integer('thang4');
-            $table->integer('thang5');
-            $table->integer('thang6');
-            $table->integer('thang7');
-            $table->integer('thang8');
-            $table->integer('thang9');
-            $table->integer('thang10');
-            $table->integer('thang11');
-            $table->integer('thang12');
+            $table->integer('nam');
+            $table->integer('thang');
+            $table->integer('ngay');
             $table->timestamps();
         });
     }

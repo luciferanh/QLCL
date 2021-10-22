@@ -27,7 +27,7 @@ Route::middleware(['auth'])->group(function(){
         #Ngày làm của nhân viên
         Route::get('ngaylam',[NhanvienController::class, 'viewngaylam']);
         Route::post('ngaylam',[NhanvienController::class, 'postviewngaylam']);
-        Route::get('listngaylam',[NhanvienController::class, 'viewlist']);
+        Route::get('nangsuat/{menu}',[NhanvienController::class, 'nangsuat']);
         #Xem danh sách nhân viên
 
         Route::get('edit/{menu}',[NhanvienController::class, 'show']);

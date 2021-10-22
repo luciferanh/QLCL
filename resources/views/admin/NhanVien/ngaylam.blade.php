@@ -30,64 +30,57 @@
               <!-- /.card-header -->
               <!-- form start -->
               <form action="" method="post">
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="exampleInputbophan_id">Tên nhân viên</label>
-                        <select class="form-control" name="nv_id" id="nv_id">
-                            @foreach($nhanvien as $key => $nhanvien)
-                            @if($nhanvien->is_admin=='2')
-                            <option value="{{$nhanvien->id}}">{{$nhanvien->name}}</option>
-                            @endif
-                            @endforeach
-                        </select>
-                    </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Năm</label>
+                    <input type="number" class="form-control" name="nam" id="nam" placeholder="Năm ">
+                  </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 1</label>
-                    <input type="number" class="form-control" name="ngay1" id="ngay1" placeholder="Số Ngày Làm Tháng thứ 1">
+                    <input type="number" class="form-control" name="T1" id="T1" placeholder="Số Ngày Làm Tháng thứ 1">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 2</label>
-                    <input type="number" class="form-control" name="ngay2" id="ngay2" placeholder="Số Ngày Làm Tháng thứ 2">
+                    <input type="number" class="form-control" name="T2" id="T2" placeholder="Số Ngày Làm Tháng thứ 2">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 3</label>
-                    <input type="number" class="form-control" name="ngay3" id="ngay3" placeholder="Số Ngày Làm Tháng thứ 3">
+                    <input type="number" class="form-control" name="T3" id="T3" placeholder="Số Ngày Làm Tháng thứ 3">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 4</label>
-                    <input type="number" class="form-control" name="ngay4" id="ngay4" placeholder="Số Ngày Làm Tháng thứ 4">
+                    <input type="number" class="form-control" name="T4" id="T4" placeholder="Số Ngày Làm Tháng thứ 4">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 5</label>
-                    <input type="number" class="form-control" name="ngay5" id="ngay5" placeholder="Số Ngày Làm Tháng thứ 5">
+                    <input type="number" class="form-control" name="T5" id="T5" placeholder="Số Ngày Làm Tháng thứ 5">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 6</label>
-                    <input type="number" class="form-control" name="ngay6" id="ngay6" placeholder="Số Ngày Làm Tháng thứ 6">
+                    <input type="number" class="form-control" name="T6" id="T6" placeholder="Số Ngày Làm Tháng thứ 6">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 7</label>
-                    <input type="number" class="form-control" name="ngay7" id="ngay7" placeholder="Số Ngày Làm Tháng thứ 7">
+                    <input type="number" class="form-control" name="T7" id="T7" placeholder="Số Ngày Làm Tháng thứ 7">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 8</label>
-                    <input type="number" class="form-control" name="ngay8" id="ngay8" placeholder="Số Ngày Làm Tháng thứ 8">
+                    <input type="number" class="form-control" name="T8" id="T8" placeholder="Số Ngày Làm Tháng thứ 8">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 9</label>
-                    <input type="number" class="form-control" name="ngay9" id="ngay9" placeholder="Số Ngày Làm Tháng thứ 9">
+                    <input type="number" class="form-control" name="T9" id="T9" placeholder="Số Ngày Làm Tháng thứ 9">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 10</label>
-                    <input type="number" class="form-control" name="ngay10" id="ngay10" placeholder="Số Ngày Làm Tháng thứ 10">
+                    <input type="number" class="form-control" name="T10" id="T10" placeholder="Số Ngày Làm Tháng thứ 10">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 11</label>
-                    <input type="number" class="form-control" name="ngay11" id="ngay11" placeholder="Số Ngày Làm Tháng thứ 11">
+                    <input type="number" class="form-control" name="T11" id="T1" placeholder="Số Ngày Làm Tháng thứ 11">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tháng 12</label>
-                    <input type="number" class="form-control" name="ngay12" id="ngay12" placeholder="Số Ngày Làm Tháng thứ 12">
+                    <input type="number" class="form-control" name="T12" id="T12" placeholder="Số Ngày Làm Tháng thứ 12">
                   </div>
                
                 </div>
