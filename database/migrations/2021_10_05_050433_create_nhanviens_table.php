@@ -21,7 +21,6 @@ class CreateNhanviensTable extends Migration
             $table->string('is_admin');
             $table->string('sdt');
             $table->timestamp('date_start')->nullable();
-
             $table->string('chuc_vu');
             $table->timestamps();
         });

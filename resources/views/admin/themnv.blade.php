@@ -33,8 +33,8 @@
                   <div class="form-group">
                     <label for="exampleInputPassword1">Quyền hạn</label>
                       <select class="form-control" name="is_admin" id="is_admin">
-                          <option value="'2'">Nhân Viên</option>
-                          <option value="'1'">Admin</option>
+                          <option value="2">Nhân Viên</option>
+                          <option value="1">Admin</option>
                       </select>
                   </div>
                     <div class="form-group">

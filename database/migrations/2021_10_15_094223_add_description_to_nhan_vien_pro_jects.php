@@ -15,8 +15,7 @@ class AddDescriptionToNhanVienProJects extends Migration
     {
         Schema::table('nhan_vien_pro_jects', function (Blueprint $table) {
             //
-            $table->integer('nang_suat');
-            $table->integer('is_quanly');
+           
         });
     }
 

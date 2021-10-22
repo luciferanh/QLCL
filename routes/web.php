@@ -24,6 +24,10 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('add',[NhanvienController::class, 'create']);
         Route::post('add',[NhanvienController::class, 'up']);
+        #Ngày làm của nhân viên
+        Route::get('ngaylam',[NhanvienController::class, 'viewngaylam']);
+        Route::post('ngaylam',[NhanvienController::class, 'postviewngaylam']);
+        Route::get('listngaylam',[NhanvienController::class, 'viewlist']);
         #Xem danh sách nhân viên
 
         Route::get('edit/{menu}',[NhanvienController::class, 'show']);

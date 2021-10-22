@@ -12,6 +12,12 @@
     <li class="nav-item d-none d-sm-inline-block">
         <a href="./nv-pj" class="nav-link">Nhân viên trong Project</a>
     </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="./listngaylam" class="nav-link">Danh sách ngày làm </a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="./ngaylam" class="nav-link">Thêm ngày làm của nhân viên</a>
+    </li>
 @endsection
 
 

@@ -56,5 +56,26 @@ class NhanvienController extends Controller
             'error'=>true
         ]);
     }
+    public function viewngaylam()
+    {   
+        $result=$this->menuService->getAllName();
+        return view('admin.NhanVien.ngaylam',[
+            'title'=> 'Thêm ngày làm dự kiến ',
+            'nhanvien'=>$result,
+        ]);
+        
+    }
+    public function postviewngaylam(Request $request)
+    { 
+       $result= $this->menuService->createngaycong($request);
+       return redirect()->back();
+    }
+    
+    public function viewlist(){
+    
+        return view('admin.Nhanvien.list_ngaylam',[
+            'title'=> 'Them nhan vien moi',
+        ]);
+    }
 }
 
