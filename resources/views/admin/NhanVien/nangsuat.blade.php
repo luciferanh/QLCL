@@ -19,71 +19,71 @@
 
 
 @section('content')
-    <div class="row" style="margin-top: 40px;">
-        <div class="col">
-
-            <h2>{{$title}} của các dự án</h2>
-
-        </div>
-    </div>
-
-    <table class="table" method="post">
-        <thead>
-        <tr>
-            <th style="width: 50px">ID</th>
-            <th style="width: 500px">Tên Dự Án</th>
-            <th style="width: 500px">Chúc vụ</th>
-            <<th style="width: 500px" >Năng suất</th>>
-            <th style="width: 100px;">&nbsp;</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($menus as $key => $menu)
+<!-- Editable table -->
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+        {{$title}} của các dự án
+    </h3>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2"
+    ></span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <thead>
             <tr>
-                <th>{{$menu->id}}</th>
-                <th>{{$menu->project->name}}</th>
-                <th>{{$menu->is_quanly==1?'Quản lý':'Nhân viên'}}</th>
-                <th>
-                    <input  name="nangsuat" id="nangsuat" value="{{$menu->nangsuat}}">
-                </th>
-                <th></th>
+                <th style="width: 50px">ID</th>
+                <th style="width: 500px">Tên Dự Án</th>
+                <th style="width: 500px">Chúc vụ</th>
+                <th style="width: 500px" >Năng suất</th>
+                <th style="width: 500px" >Thay đổi</th>
+            </tr>
+          </thead>
+          <tbody>
+               @foreach($menus as $key => $menu)
+            <tr>
+                <td class="pt-3-half" contenteditable="true">{{$menu->id}}</td>
+                <td class="pt-3-half" contenteditable="true">{{$menu->project->name}}</td>
+                <td class="pt-3-half" contenteditable="true">{{$menu->is_quanly==1?'Quản lý':'Nhân viên'}}</td>
+                <td class="pt-3-half" contenteditable="true"></td>
+                <td>
+                    <span class="table-remove" ><button type="button" class="btn btn-success btn-rounded btn-sm my-0"> Thay đổi </button></span  >
+                </td>
+
             </tr>
         @endforeach
 
-        </tbody>
-    </table>
-    <div >
-        <button type="submit" class="btn btn-primary">Edit Năng Suất</button>
-    </div>
-    <div class="row" style="margin-top: 40px;">
+          </tbody>
+        </table>
         @foreach($menus as $key => $menu)
-            @if($menu->is_quanly==1)
-                <div class="col">
-                    <h2>Thông số quản lý dự án {{$menu->project->name}} </h2>
-                </div>
-                <table class="table">
-                    <thead>
+        @if($menu->is_quanly==1)
+            <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+                Thông số quản lý dự án {{$menu->project->name}}
+            </h3>
+            <div id="table" class="table-editable">
+                <span class="table-add float-right mb-3 mr-2" ><a href="#!" class="text-success"></a ></span>
+                <table class="table table-bordered table-responsive-md table-striped text-center">
+                <thead>
                     <tr>
                         @for( $t=1;$t<=12;$t++)
-                        <th >{{$t}}月</th>
-                        @endfor
+                            <th >{{$t}}月</th>
+                            @endfor
                     </tr>
-                    </thead>
-                    <tbody>
+                </thead>
+                <tbody>
+                    <tr>
                     @for( $t=1;$t<=12;$t++)
-                        <th>
-                        <input style="width: 50px;" name="thongsoquanly{{$t}}" id="thongsoquanly"/>
-                        </th>
+                        <td class="pt-3-half" contenteditable="true"></td>
                     @endfor
-
-                    </tbody>
+                </tr>
+                </tbody>
                 </table>
-            @endif
-        @endforeach
+        </div>
+      @endif
+      @endforeach
+    </div>
+  </div>
+  <!-- Editable table -->
 
-    </div>
-    <div >
-        <button type="submit" class="btn btn-primary">Edit Thông số quản lý</button>
-    </div>
+   
 
 @endsection
