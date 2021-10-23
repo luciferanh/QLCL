@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <table class="table">
+    <table class="table" method="post">
         <thead>
         <tr>
             <th style="width: 50px">ID</th>
@@ -49,6 +49,7 @@
                 <th></th>
             </tr>
         @endforeach
+
         </tbody>
     </table>
     <div >
