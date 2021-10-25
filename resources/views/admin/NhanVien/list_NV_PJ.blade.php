@@ -33,21 +33,32 @@
             <tr>
                 <th>{{$menu->nhanvien->name}}</th>
                 <th>{{$menu->project->name}}</th>
-                <th>1</th>
-                @for( $t=1;$t<=12;$t++)
+                @if( $menu->nang_suat ==0)
+                <th>100%</th>
+                @endif
+                @if( $menu->nang_suat !=0)
+                <th>{{ $menu->nang_suat }}%</th>
+                @endif
+                @foreach($ngaylamviec as $key => $ngay)
 
-                        @if( date('m',strtotime($menu->nhanvien->date_start))>$t)
+                        @if( date('m',strtotime($menu->nhanvien->date_start))>$ngay->thang)
                             <th></th>
                         @endif
-                        @if( date('m',strtotime($menu->nhanvien->date_start))<=$t)
+                        @if( date('m',strtotime($menu->nhanvien->date_start))<=$ngay->thang)
                                 @foreach($nss as $key => $ns)
                                     @if($t-date('m',strtotime($menu->nhanvien->date_start))+1==$ns->thang)
-                                     <th>{{$ns->nangsuat}}</th>
+                                    @if( $menu->nang_suat ==0)
+                                    <th>{{$ns->nangsuat}}({{ $ngay->ngay }})</th>
+                                    @endif
+                                    @if( $menu->nang_suat !=0)
+                                    <th>{{$ns->nangsuat}}({{ $ngay->ngay * $menu->nang_suat/100}})</th>
+                                    @endif
+                                     
                                     @endif
                                 @endforeach
                         @endif
 
-                @endfor
+                 @endforeach
 
             </tr>
         @endforeach

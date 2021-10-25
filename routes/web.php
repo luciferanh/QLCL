@@ -59,6 +59,8 @@ Route::middleware(['auth'])->group(function(){
         });
         //--------------------------------------------------------------------------------------------------------------------------------------
         Route::DELETE('destroy1',[ProjectController::class, 'destroy']);
+        
+        Route::post('add_NS',[NhanVienProJectController::class, 'add_NS']);
         #Du an và nhân viên
         Route::get('nv-pj',[NhanVienProJectController::class, 'SetNV_PJ']);
 

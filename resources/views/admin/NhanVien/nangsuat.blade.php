@@ -44,9 +44,9 @@
                 <td class="pt-3-half" contenteditable="true">{{$menu->id}}</td>
                 <td class="pt-3-half" contenteditable="true">{{$menu->project->name}}</td>
                 <td class="pt-3-half" contenteditable="true">{{$menu->is_quanly==1?'Quản lý':'Nhân viên'}}</td>
-                <td class="pt-3-half" contenteditable="true"></td>
+                <td class="pt-3-half" contenteditable="true" id="NS_{{$menu->id  }}" >{{ $menu->nang_suat }}</td>
                 <td>
-                    <span class="table-remove" ><button type="button" class="btn btn-success btn-rounded btn-sm my-0"> Thay đổi </button></span  >
+                    <a class="btn btn-success btn-rounded btn-sm my-0" id="Add_NS" name="Add_NS"  onclick="add_NS({{$menu->id}},'/admin/add_NS')"> Thay đổi </a >
                 </td>
 
             </tr>
@@ -83,6 +83,35 @@
     </div>
   </div>
   <!-- Editable table -->
+  <script>
+
+function add_NS(id, url)
+{
+    a = $('#NS_'+id).text();
+    console.log(id,a,url);
+    $.ajax({
+        type:'POST',
+        data:{
+            'so_id':id,
+            'NS': a
+        },
+        url:url,
+        cache: false,
+        success: function (result){
+       
+            if(result.error==false){
+            
+                location.reload();
+            }else{
+                alert("Xóa lỗi vui lòng thử lại");
+            }
+        }
+    })
+
+
+}
+
+  </script>
 
    
 
