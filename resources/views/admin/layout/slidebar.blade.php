@@ -23,28 +23,28 @@
                 @if(\Illuminate\Support\Facades\Session::get('is_admin')=='1')
                     <li class="nav-item menu-open">
                         <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fa fa-tachometer-alt"></i>
                             <p>
                                 Master
-                                <i class="right fas fa-angle-left"></i>
+                                <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="/admin/home" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="fa fa-circle nav-icon"></i>
                                     <p>Nhân viên</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/admin/project" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="fa fa-circle nav-icon"></i>
                                     <p>Dự án</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/admin/bophan" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="fa fa-circle nav-icon"></i>
                                     <p>Bộ phận</p>
                                 </a>
                             </li>
@@ -53,22 +53,22 @@
                 @endif
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tree"></i>
+                        <i class="nav-icon fa fa-tree"></i>
                         <p>
                             Nghiệp vụ
-                            <i class="fas fa-angle-left right"></i>
+                            <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="pages/UI/general.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fa fa-circle nav-icon"></i>
                                 <p>General</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="pages/UI/icons.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fa fa-circle nav-icon"></i>
                                 <p>Icons</p>
                             </a>
                         </li>
@@ -76,16 +76,16 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
+                        <i class="nav-icon fa fa-edit"></i>
                         <p>
                             Thống kê
-                            <i class="fas fa-angle-left right"></i>
+                            <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="pages/forms/general.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fa fa-circle nav-icon"></i>
                                 <p>General Elements</p>
                             </a>
                         </li>

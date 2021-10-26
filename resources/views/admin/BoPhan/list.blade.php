@@ -1,7 +1,7 @@
 @extends('home')
 @section('nav_bar')
     <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
         <a href="./bophan" class="nav-link">Danh sách</a>
@@ -27,7 +27,7 @@
                 <th>{{$menu->id}}</th>
                 <th>{{$menu->name}}</th>
                 <th>
-                    <a class="btn btn-primary btn-sm" href="/admin/edit/{{$menu->id}}"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-primary btn-sm" href="/admin/edit/{{$menu->id}}"><i class="fa fa-edit"></i></a>
                 </th>
             </tr>
         @endforeach

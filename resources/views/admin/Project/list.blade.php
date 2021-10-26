@@ -1,16 +1,13 @@
 @extends('home')
 @section('nav_bar')
     <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
         <a href="/admin/project/" class="nav-link">Danh sách</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
         <a href="/admin/project/add" class="nav-link">Thêm</a>
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-        <a href="/admin/project/add" class="nav-link">Thêm Nhân viên vào dự án</a>
     </li>
 @endsection
 
@@ -38,10 +35,10 @@
                 <th>{{$menu->date_end}}</th>
                 <th>{{$menu->sl_nv->count()}}</th>
                 <th>
-                    <a class="btn btn-primary btn-sm" href="/admin/project/setnv/{{$menu->id}}"><i class="fas fa-search"></i></a>
-                    <a class="btn btn-primary btn-sm" href="/admin/project/edit/{{$menu->id}}"><i class="fas fa-edit"></i></a>
-                    <a class="btn btn-danger btn-sm" href="#"
-                       onclick="removeRow({{$menu->id}},'/admin/destroy1')"> <i class="fas fa-trash"></i></a>
+                    <span class="btn btn-primary " href="/admin/project/setnv/{{$menu->id}}"><i class="fa fa-id-badge"></i></span>
+                    <span class="btn btn-primary " href="/admin/project/edit/{{$menu->id}}"><i class="fa fa-edit"></i></span>
+                    <span class="btn btn-danger" href="#"
+                       onclick="removeRow({{$menu->id}},'/admin/destroy1')"> <i class="fa fa-trash"></i></span>
                 </th>
             </tr>
         @endforeach

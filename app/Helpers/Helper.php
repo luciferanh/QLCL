@@ -15,9 +15,9 @@ class Helper
                         <th>'.self::active($menu->active) .'</th>
                         <th>'.$menu->updated_at .'</th>
                         <th>
-                            <a class="btn btn-primary btn-sm" href="/admin/menus/edit/'.$menu->id.'"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-primary btn-sm" href="/admin/menus/edit/'.$menu->id.'"><i class="fa fa-edit"></i></a>
                             <a class="btn btn-danger btn-sm" href="#"
-                                onclick="removeRow('.$menu->id.',\'/admin/menus/destroy\')"> <i class="fas fa-trash"></i></a>
+                                onclick="removeRow('.$menu->id.',\'/admin/menus/destroy\')"> <i class="fa fa-trash"></i></a>
                         </th>
                     </tr>
                     ';unset($menus[$key]);

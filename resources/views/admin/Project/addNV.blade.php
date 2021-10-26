@@ -16,14 +16,6 @@
     <link rel="stylesheet" type="text/css" href="https://www.virtuosoft.eu/code/bootstrap-duallistbox/bootstrap-duallistbox/v3.0.2/bootstrap-duallistbox.css">
 
     <!-- Demo -->
-
-        <div class="row" style="margin-top: 40px;">
-            <div class="col">
-
-                <h2> Thêm Nhân viên vào dự án {{$title}} </h2>
-
-            </div>
-        </div>
         <div class="row" style="margin-bottom: 40px;">
             <div class="col">
                 <form method="post" action="" id="demoform">

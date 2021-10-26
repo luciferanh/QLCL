@@ -16,7 +16,7 @@
 
 
 @section('content')
-    <table class="table">
+    <table class="table table-striped table-hover">
         <thead>
         <tr>
             <th >Tên Nhân viên </th>
@@ -31,7 +31,7 @@
         <tbody>
         @foreach($nvs as $key => $menu)
             <tr>
-                <th>{{$menu->nhanvien->name}}</th>
+                <th><a href="/admin/nangsuat/{{$menu->nhanvien->id}}"  >{{$menu->nhanvien->name}}</th>
                 <th>{{$menu->project->name}}</th>
                 @if( $menu->nang_suat ==0)
                 <th>100%</th>
