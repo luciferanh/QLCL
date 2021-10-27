@@ -19,16 +19,16 @@
                 <div class="card-body">
 
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Name</label>
-                    <input class="form-control" name="name" id="name" placeholder="Enter name">
+                    <label for="exampleInputEmail1">Name<span style="color:red;"> (*)</span></label>
+                    <input name="name" type="name" placeholder="name" pattern="[a-zA\s]{1,15}" id="name" >
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
+                    <label for="exampleInputEmail1">Email address<span style="color:red;"> (*)</span></label>
                     <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password">
+                    <label for="exampleInputPassword1">Password <span style="color:red;"></label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password"">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Quyền hạn</label>
@@ -39,7 +39,7 @@
                   </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Số điện thoại</label>
-                        <input type="tel" name="sdt" class="form-control" id="sdt" placeholder="Enter sdt">
+                        <input type="tel" name="sdt" class="form-control" id="sdt" placeholder="Enter sdt" pattern="[Z0-9 ]{10}">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Chức vụ</label>

@@ -20,11 +20,11 @@
                   <div class="row">
                             <div class="col">
                               <label for="exampleInputEmail1">Name<span style="color:red;"> (*)</span></label>
-                              <input name="username" type="text" placeholder="Username" pattern="[a-z]{1,15}" id="username">
+                              <input name="name" type="name" placeholder="name" pattern="[a-zA\s]{1,15}" id="name" >
                             </div>
                               <div class="col">
                                   <label for="exampleInputbophan_id">Bộ phận</label>
-                                  <select class="form-control" name="bophan_id" id="bophan_id" pattern="[a-z]{1,15}">
+                                  <select class="form-control" name="bophan_id" id="bophan_id" pattern="[a-z]{1,15} ">
                                       @foreach($bophans as $key => $bophan)
                                       <option value="{{$bophan->id}}">{{$bophan->name}}</option>
                                       @endforeach

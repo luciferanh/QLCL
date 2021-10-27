@@ -19,11 +19,11 @@
                 <div class="card-body">
 
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Name</label>
-                    <input class="form-control" name="name" value="{{$menu->name}}" id="name" placeholder="Enter name">
+                    <label for="exampleInputEmail1">Name<span style="color:red;"> (*)</span></label>
+                    <input class="form-control" name="name" value="{{$menu->name}}" id="name" pattern="[a-zA\s]{1,15}" placeholder="Enter name">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
+                    <label for="exampleInputEmail1">Email address<span style="color:red;"> (*)</span></label>
                     <input type="email" name="email" value="{{$menu->email}}"  class="form-control" id="email" placeholder="Enter email">
                   </div>
                     <input hidden  type="password" name="password" value="0"  class="form-control" id="password" >
@@ -36,7 +36,7 @@
                   </div>
                     <div class="form-group">
                         <label >Số điện thoại</label>
-                        <input type="tel" name="sdt" class="form-control" id="sdt" value="{{$menu->sdt}}" placeholder="Enter sdt">
+                        <input type="tel" name="sdt" class="form-control" id="sdt" value="{{$menu->sdt}}"  pattern="[Z0-9 ]{10}" placeholder="Enter sdt">
                     </div>
                     <div class="form-group">
                         <label >Chức vụ</label>
