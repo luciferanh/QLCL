@@ -42,6 +42,7 @@ class NhanvienController extends Controller
     }
     public function update(User $menu,CreateNV $request )
     {
+        
         $this->menuService->update($request,$menu);
         return redirect('/admin/home');
     }
