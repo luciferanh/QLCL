@@ -7,7 +7,8 @@ use App\Http\Requests\Menu\CreateNV;
 use App\Http\Services\Menu\MenuService;
 use App\Models\User;
 use App\Models\ngaycong;
-
+use App\Models\NhanVienProJect;
+use Illuminate\Support\Facades\Session;
 class NhanvienController extends Controller
 {
     protected $menuService;
@@ -77,6 +78,32 @@ class NhanvienController extends Controller
             'title' =>'Năng suất của nhân viên '.$menu->name,
             'menus' => $result
         ]);
+    }
+    public function add_NS(Request $request){
+         $a =$request->post();
+         try{
+            foreach ($a as $key => $value){
+                if ($value == "_token") {
+                    unset($a[$key]);
+                }
+                $page = NhanVienProJect::find($key);
+                $result=false;
+                // Make sure you've got the Page model
+                if($page) {
+                    $page->nang_suat = $value;
+                    $page->save();
+                    $result=true;
+                }
+                
+            }
+         Session::flash('success',"Tạo Thành Công ");
+         return redirect()->back();
+         }catch(\Exception $err){
+             Session::flash('error',$err->getMessage());
+             return redirect()->back();
+         }
+      
+ 
     }
 
 }

@@ -28,6 +28,7 @@
       <div id="table" class="table-editable">
         <span class="table-add float-right mb-3 mr-2"
     ></span>
+    <form method="post" action="">
         <table class="table table-bordered table-responsive-md table-striped text-center">
           <thead>
             <tr>
@@ -35,25 +36,28 @@
                 <th style="width: 500px">Tên Dự Án</th>
                 <th style="width: 500px">Chúc vụ</th>
                 <th style="width: 500px" >Năng suất</th>
-                <th style="width: 500px" >Thay đổi</th>
             </tr>
           </thead>
+
           <tbody>
+ 
                @foreach($menus as $key => $menu)
             <tr>
-                <td class="pt-3-half" contenteditable="true">{{$menu->id}}</td>
-                <td class="pt-3-half" contenteditable="true">{{$menu->project->name}}</td>
-                <td class="pt-3-half" contenteditable="true">{{$menu->is_quanly==1?'Quản lý':'Nhân viên'}}</td>
-                <td class="pt-3-half" contenteditable="true" id="NS_{{$menu->id  }}" >{{ $menu->nang_suat }}</td>
-                <td>
-                    <a class="btn btn-success btn-rounded btn-sm my-0" id="Add_NS" name="Add_NS"  onclick="add_NS({{$menu->id}},'/admin/add_NS')"> Thay đổi </a >
-                </td>
-
+               
+                <td class="pt-3-half" >{{$menu->id}}</td>
+                <td class="pt-3-half" >{{$menu->project->name}}</td>
+                <td class="pt-3-half" >{{$menu->is_quanly==1?'Quản lý':'Nhân viên'}}</td>
+                <td class="pt-3-half" >
+                    <input class="form-control" id="{{$menu->id  }}" name="{{$menu->id  }}" value="{{ $menu->nang_suat }}" style="background-color: transparent;  outline: none; box-shadow: none;   border-top-style: hidden;  border-right-style: hidden; border-left-style: hidden;  border-bottom-style: hidden;"/></td>
             </tr>
         @endforeach
 
           </tbody>
         </table>
+        <button type="submit" class="btn btn-primary">Thay đổi</button>
+        @csrf
+    </form>
+
         @foreach($menus as $key => $menu)
         @if($menu->is_quanly==1)
             <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
@@ -81,6 +85,7 @@
       @endif
       @endforeach
     </div>
+    @csrf
   </div>
   <!-- Editable table -->
   <script>

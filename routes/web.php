@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function(){
         #Năng suất của NV
         //--------------------------------------------------------------------------------------------------------------------------------------
         Route::get('nangsuat/{menu}',[NhanvienController::class, 'nangsuat']);
+        Route::post('nangsuat/{menu}',[NhanvienController::class, 'add_NS']);
         //--------------------------------------------------------------------------------------------------------------------------------------
 
         Route::get('edit/{menu}',[NhanvienController::class, 'show']);
@@ -60,7 +61,7 @@ Route::middleware(['auth'])->group(function(){
         //--------------------------------------------------------------------------------------------------------------------------------------
         Route::DELETE('destroy1',[ProjectController::class, 'destroy']);
         
-        Route::post('add_NS',[NhanVienProJectController::class, 'add_NS']);
+      
         #Du an và nhân viên
         Route::get('nv-pj',[NhanVienProJectController::class, 'SetNV_PJ']);
 

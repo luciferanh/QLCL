@@ -23,6 +23,7 @@ class NhanVienProJectController extends Controller
         ]);
     }
     public function add_NS(Request $request){
+        dd($request);
         $id=(int) $request->input('so_id');
 
         $NS=(int) $request->input('NS');
