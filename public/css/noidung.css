@@ -1,0 +1,32 @@
+.container1{
+    display: flex; 
+    flex-direction: row;
+}
+.item1{
+    margin-left: 10px;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 2px solid #B0BEC5;
+}
+input:invalid {
+    border-color: #DD2C00;
+}
+
+#notify {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 12px;
+  width: 100%;
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#notify.error {
+  background-color: #DD2C00;
+}

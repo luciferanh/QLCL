@@ -35,10 +35,10 @@
                 <th>{{$menu->date_end}}</th>
                 <th>{{$menu->sl_nv->count()}}</th>
                 <th>
-                    <span class="btn btn-primary " href="/admin/project/setnv/{{$menu->id}}"><i class="fa fa-id-badge"></i></span>
-                    <span class="btn btn-primary " href="/admin/project/edit/{{$menu->id}}"><i class="fa fa-edit"></i></span>
-                    <span class="btn btn-danger" href="#"
-                       onclick="removeRow({{$menu->id}},'/admin/destroy1')"> <i class="fa fa-trash"></i></span>
+                    <a class="btn btn-primary " href="/admin/project/setnv/{{$menu->id}}"><i class="fa fa-id-badge"></i></a>
+                    <a class="btn btn-primary " href="/admin/project/edit/{{$menu->id}}"><i class="fa fa-edit"></i></a>
+                    <a class="btn btn-danger" href="#"
+                       onclick="removeRow({{$menu->id}},'/admin/destroy1')"> <i class="fa fa-trash"></i></a>
                 </th>
             </tr>
         @endforeach

@@ -100,9 +100,12 @@ function add_NS(id, url)
         success: function (result){
        
             if(result.error==false){
-            
+               alert("thanhcong");
                 location.reload();
+                console.log(result.giatri);
+                
             }else{
+                console.log(result.giatri);
                 alert("Xóa lỗi vui lòng thử lại");
             }
         }

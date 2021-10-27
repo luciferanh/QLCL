@@ -17,19 +17,20 @@
               <!-- form start -->
               <form action="" method="post">
                 <div class="card-body">
-
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Name</label>
-                    <input class="form-control" name="name" id="name" placeholder="Enter name">
+                  <div class="row">
+                            <div class="col">
+                              <label for="exampleInputEmail1">Name<span style="color:red;"> (*)</span></label>
+                              <input name="username" type="text" placeholder="Username" pattern="[a-z]{1,15}" id="username">
+                            </div>
+                              <div class="col">
+                                  <label for="exampleInputbophan_id">Bộ phận</label>
+                                  <select class="form-control" name="bophan_id" id="bophan_id" pattern="[a-z]{1,15}">
+                                      @foreach($bophans as $key => $bophan)
+                                      <option value="{{$bophan->id}}">{{$bophan->name}}</option>
+                                      @endforeach
+                                  </select>
+                              </div>
                   </div>
-                    <div class="form-group">
-                        <label for="exampleInputbophan_id">Bộ phận</label>
-                        <select class="form-control" name="bophan_id" id="bophan_id">
-                            @foreach($bophans as $key => $bophan)
-                            <option value="{{$bophan->id}}">{{$bophan->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Description</label>
                     <input class="form-control" name="description" id="description" placeholder="Enter Description">
@@ -37,15 +38,17 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Content</label>
                     <input class="form-control" name="content" id="content" placeholder="Enter Content">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Ngày bắt đầu</label> <br/>
-                    <input class="datepicker" name="date_start" id="date_start" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Ngày kết thúc</label> <br/>
-                    <input class="datepicker" name="date_end" id="date_end" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
-                  </div>
+                  </div >
+                          <div class="container1" >
+                              <div class="item">
+                                <label for="exampleInputEmail1">Ngày bắt đầu</label> <br/>
+                                <input class="datepicker" name="date_start" id="date_start" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
+                              </div>
+                              <div class="item1">
+                                <label for="exampleInputEmail1">Ngày kết thúc</label> <br/>
+                                <input class="datepicker" name="date_end" id="date_end" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
+                              </div>
+                          </div>
                 </div>
 
                 <!-- /.card-body -->
@@ -62,7 +65,5 @@
 
         </div>
         <!-- /.row -->
-  <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
 @endsection
