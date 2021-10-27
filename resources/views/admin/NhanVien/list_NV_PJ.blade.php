@@ -1,7 +1,7 @@
 @extends('home')
 @section('nav_bar')
     <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
         <a href="/admin/home" class="nav-link">Danh sách</a>

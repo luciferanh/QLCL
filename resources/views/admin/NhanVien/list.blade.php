@@ -39,7 +39,7 @@
                 <th>{!!  \App\Helpers\Helper::active($menu->is_admin)!!}</th>
                 <th>
       
-                    <button class="btn btn-success " href="/admin/edit/{{$menu->id}}"><i class="fa fa-edit"></i></button>
+                    <a class="btn btn-success " href="/admin/edit/{{$menu->id}}"><i class="fa fa-edit"></i></a>
                     <a class="btn btn-danger" href="#"  onclick="removeRow({{$menu->id}},'/admin/destroy')"> <i class="fa fa-trash"></i></a> 
                 </th>
             </tr>
