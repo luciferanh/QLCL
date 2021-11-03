@@ -13,6 +13,9 @@
 
 
 @section('content')
+<h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+    Danh sách các bộ phận
+</h3>
     <table class="table">
         <thead>
         <tr>

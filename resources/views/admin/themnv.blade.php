@@ -39,7 +39,7 @@
                   </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Số điện thoại</label>
-                        <input type="tel" name="sdt" class="form-control" id="sdt" placeholder="Enter sdt" pattern="[Z0-9 ]{10}">
+                        <input type="tel" name="sdt" class="form-control" id="sdt" placeholder="Enter sdt" pattern="[Z0-9 ]{10}" onkeypress="return /[0-9]/i.test(event.key)">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Chức vụ</label>
@@ -47,8 +47,10 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Ngày làm việc</label> <br/>
-                        <input class="datepicker" name="date_start" id="date_start" value="{!!date('d-m-Y')!!}" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
+                        <input class="datepicker" name="date_start" id="date_start" data-provide="datepicker" >
+                     
                     </div>
+
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
@@ -65,6 +67,8 @@
         </div>
         <!-- /.row -->
   <!-- /.content-wrapper -->
+  <script>
 
+   </script>
   <!-- Control Sidebar -->
 @endsection

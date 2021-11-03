@@ -13,6 +13,13 @@
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="/css/OverlayScrollbars.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
+<script>
+  $(function() {
+      $( ".datepicker" ).datepicker();
+  });
+  </script>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @yield('head')
 

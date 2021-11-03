@@ -13,6 +13,9 @@
 
 
 @section('content')
+<h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+   Danh sách các dự án
+</h3>
     <table class="table">
         <thead>
         <tr>
@@ -20,8 +23,8 @@
             <th >Tên</th>
             <th >Bộ Phận</th>
             <th >Ngày Bắt đầu</th>
-            <<th  >Ngày Kết thúc</th>>
-            <<th  >Số người đang làm</th>>
+            <th  >Ngày Kết thúc</th>
+            <th  >Số người đang làm</th>
             <th >&nbsp;</th>
         </tr>
         </thead>

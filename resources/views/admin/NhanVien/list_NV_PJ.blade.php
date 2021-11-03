@@ -23,7 +23,7 @@
             <th >Tên Dự Án</th>
             <th >Năng suất </th>
             @for($t=1;$t<=12;$t++)
-            <<th > {!! $t!!}月</th>>
+            <th > {!! $t!!}月</th>
             @endfor
             <th >&nbsp;</th>
         </tr>

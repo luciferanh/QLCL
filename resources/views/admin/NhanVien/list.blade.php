@@ -19,14 +19,16 @@
 
 
 @section('content')
-
+<h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+    Danh sách nhân viên
+</h3>
     <table class="table">
         <thead>
         <tr>
             <th >ID</th>
             <th >Tên</th>
             <th >Email</th>
-            <<th >Quyền admin</th>>
+            <th >Quyền admin</th>
             <th >&nbsp;</th>
         </tr>
         </thead>
@@ -47,5 +49,5 @@
         @csrf
         </tbody>
     </table>
-
+    <div class="card-footer clearfix">    {!!$menus->links()!!}</div>
 @endsection

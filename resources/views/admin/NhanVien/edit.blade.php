@@ -36,7 +36,7 @@
                   </div>
                     <div class="form-group">
                         <label >Số điện thoại</label>
-                        <input type="tel" name="sdt" class="form-control" id="sdt" value="{{$menu->sdt}}"  pattern="[Z0-9 ]{10}" placeholder="Enter sdt">
+                        <input type="tel" name="sdt" class="form-control" id="sdt" value="{{$menu->sdt}}"  pattern="[Z0-9 ]{10}" placeholder="Enter sdt" onkeypress="return /[0-9]/i.test(event.key)">
                     </div>
                     <div class="form-group">
                         <label >Chức vụ</label>
