@@ -34,8 +34,8 @@
                 <th>{{$menu->id}}</th>
                 <th>{{$menu->name}}</th>
                 <th>{{$menu->bophan->name}}</th>
-                <th>{{$menu->date_start}}</th>
-                <th>{{$menu->date_end}}</th>
+                <th>{!!date('d-m-Y', strtotime($menu->date_start));  !!}</th>
+                <th>{!!date('d-m-Y', strtotime($menu->date_end));  !!}</th>
                 <th>{{$menu->sl_nv->count()}}</th>
                 <th>
                     <a class="btn btn-primary " href="/admin/project/setnv/{{$menu->id}}"><i class="fa fa-id-badge"></i></a>

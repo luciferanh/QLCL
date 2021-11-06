@@ -20,7 +20,7 @@
                   <div class="row">
                             <div class="col">
                               <label for="exampleInputEmail1">Name<span style="color:red;"> (*)</span></label>
-                              <input name="name" type="name" placeholder="name" pattern="[a-zA\s]{1,15}" id="name" >
+                              <input name="name" type="name" placeholder="name" pattern="[a-zA\s]{0,15}" id="name" >
                             </div>
                               <div class="col">
                                   <label for="exampleInputbophan_id">Bộ phận</label>
@@ -42,11 +42,11 @@
                           <div class="container1" >
                               <div class="item">
                                 <label for="exampleInputEmail1">Ngày bắt đầu</label> <br/>
-                                <input class="datepicker" name="date_start" id="date_start" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
+                                <input type="date" class="datepicker" name="date_start" id="date_start"  >
                               </div>
                               <div class="item1">
                                 <label for="exampleInputEmail1">Ngày kết thúc</label> <br/>
-                                <input class="datepicker" name="date_end" id="date_end" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
+                                <input type="date" class="datepicker" name="date_end" id="date_end"  >
                               </div>
                           </div>
                 </div>

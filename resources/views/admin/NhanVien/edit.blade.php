@@ -20,11 +20,11 @@
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name<span style="color:red;"> (*)</span></label>
-                    <input class="form-control" name="name" value="{{$menu->name}}" id="name" pattern="[a-zA\s]{1,15}" placeholder="Enter name">
+                    <input class="form-control" name="name" value="{{$menu->name}}" id="name" pattern="[^-,]+[A-Za-z\s]{0,18}$" placeholder="Enter name" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email address<span style="color:red;"> (*)</span></label>
-                    <input type="email" name="email" value="{{$menu->email}}"  class="form-control" id="email" placeholder="Enter email">
+                    <input type="email" name="email" value="{{$menu->email}}"  class="form-control" id="email" placeholder="Enter email" required>
                   </div>
                     <input hidden  type="password" name="password" value="0"  class="form-control" id="password" >
                   <div class="form-group">
@@ -40,11 +40,18 @@
                     </div>
                     <div class="form-group">
                         <label >Chức vụ</label>
-                        <input name="chuc_vu" class="form-control" id="chuc_vu" placeholder="Enter chuc vu" value="{{$menu->chuc_vu}}">
+                        <label for="exampleInputEmail1">Chức vụ</label>
+                        <select name="chuc_vu" id="chuc_vu" class="form-control"  value="{{$menu->chuc_vu}}">
+                        <option value="Quản lí">Quản lí</option>
+                        <option value="Leader">Leader</option>
+                        <option value="Nhân Viên">Nhân Viên</option>
+                        </select>
+      
                     </div>
                     <div class="form-group">
-                        <label >Ngày làm việc</label> <br/>
-                        <input class="datepicker" name="date_start" id="date_start" value="{!!date('d-m-Y', strtotime($menu->date_start));  !!}" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
+                        <label  >Ngày làm việc</label> <br/>
+                        <input  class="datepicker" name="date_start" id="date_start" value="{!!date('d-m-Y', strtotime($menu->date_start));  !!}" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
+                        
                     </div>
                 </div>
                 <!-- /.card-body -->
