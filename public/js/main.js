@@ -6,7 +6,9 @@ $.ajaxSetup({
 
 function removeRow(id, url)
 {
-    if(confirm(' Bạn có chắc chắn Xóa ? Lưu ý :Xóa mà không thể khôi phục')){
+ 
+
+    if(confirm(' Bạn có chắc chắn xóa '+$("#name").text()+'? Lưu ý :Xóa mà không thể khôi phục')){
         $.ajax({
             type:'DELETE',
             datatype:'JSON',
