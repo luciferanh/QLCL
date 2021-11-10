@@ -36,13 +36,13 @@
         @foreach($menus as $key => $menu)
             <tr>
                 <th>{{$menu->id}}</th>
-                <th><a href="/admin/nangsuat/{{$menu->id}}"  >{{$menu->name}}</th>
+                <th><a href="/admin/nangsuat/{{$menu->id}}"  id="name" >{{$menu->name}}</a></th>
                 <th>{{$menu->email}}</th>
                 <th>{!!  \App\Helpers\Helper::active($menu->is_admin)!!}</th>
                 <th>
       
                     <a class="btn btn-success " href="/admin/edit/{{$menu->id}}"><i class="fa fa-edit"></i></a>
-                    <a class="btn btn-danger" href="#"  onclick="removeRow({{$menu->id}},'/admin/destroy')"> <i class="fa fa-trash"></i></a> 
+                    <a class="btn btn-danger" href="#"  onclick="removeRow({{$menu->id}},'/admin/destroy')" class="confirm"> <i class="fa fa-trash"></i></a> 
                 </th>
             </tr>
         @endforeach
