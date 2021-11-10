@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label  >Ngày làm việc</label> <br/>
-                        <input  class="datepicker" name="date_start" id="date_start" value="{!!date('d-m-Y', strtotime($menu->date_start));  !!}" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
+                        <input type="date" class="datepicker" name="date_start" id="date_start" value="{{$menu->date_start}}" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" >
                         
                     </div>
                 </div>
