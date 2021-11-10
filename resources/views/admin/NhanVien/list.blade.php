@@ -42,12 +42,16 @@
                 <th>
       
                     <a class="btn btn-success " href="/admin/edit/{{$menu->id}}"><i class="fa fa-edit"></i></a>
-                    <a class="btn btn-danger" href="#"  onclick="removeRow({{$menu->id}},'/admin/destroy')" class="confirm"> <i class="fa fa-trash"></i></a> 
+
+                    <a class="btn btn-danger" href="#"  onclick="removeRow({{$menu->id}},'/admin/destroy')" id="btnChangeBg"> <i class="fa fa-trash"></i></a>
+      
                 </th>
             </tr>
         @endforeach
-        @csrf
+        
         </tbody>
+        @csrf
     </table>
     <div class="card-footer clearfix">    {!!$menus->links()!!}</div>
+
 @endsection

@@ -48,6 +48,7 @@ class NhanvienController extends Controller
     }
     public function destroy(Request $request)
     {
+     
         $result=$this->menuService->destroy($request);
         if($result){
             return response()->json([

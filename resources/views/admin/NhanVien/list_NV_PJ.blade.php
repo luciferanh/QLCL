@@ -16,6 +16,9 @@
 
 
 @section('content')
+<h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+    Danh sách nhân viên trong các project
+</h3>
     <table class="table table-striped table-hover">
         <thead>
         <tr>

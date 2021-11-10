@@ -19,9 +19,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
 
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/blitzer/jquery-ui.css" type="text/css" />
-<script src="/js/jquery.easy-confirm-dialog.js"></script>
+<meta name="csrf-token" content="<?php echo csrf_token(); ?>">
+
 <script>
   $(function() {
       $( ".datepicker" ).datepicker();
