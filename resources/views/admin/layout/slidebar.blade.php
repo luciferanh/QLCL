@@ -17,11 +17,11 @@
         </div>
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" >
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 @if(\Illuminate\Support\Facades\Session::get('is_admin')=='1')
-                    <li class="nav-item menu-open">
+                    <li class="nav-item menu-open" >
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fa fa-tachometer-alt"></i>
                             <p>
@@ -29,8 +29,8 @@
                                 <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
+                        <ul class="nav nav-treeview" id="myDIV">
+                            <li class="nav-item" >
                                 <a href="/admin/home" class="nav-link">
                                     <i class="fa fa-circle nav-icon"></i>
                                     <p>Nhân viên</p>
@@ -98,3 +98,14 @@
     </ul>
     <!-- /.content -->
 </aside>
+<script>
+    var btnContainer = document.getElementById("myDIV");
+    var btns = btnContainer.getElementsByClassName("nav-item");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    });
+}
+</script>

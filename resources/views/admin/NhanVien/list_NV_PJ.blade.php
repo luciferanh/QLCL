@@ -33,6 +33,7 @@
         </thead>
         <tbody>
         @foreach($nvs as $key => $menu)
+             @if($menu->nhanvien !=null && $menu->project!=null ) 
             <tr>
                 <th><a href="/admin/nangsuat/{{$menu->nhanvien->id}}"  >{{$menu->nhanvien->name}}</th>
                 <th>{{$menu->project->name}}</th>
@@ -64,6 +65,7 @@
                  @endforeach
 
             </tr>
+            @endif
         @endforeach
         </tbody>
     </table>
