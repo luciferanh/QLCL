@@ -18,32 +18,31 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" >
-                <!-- Add icons to the links using the .nav-icon class
-                     with font-awesome or any other icon font library -->
+
                 @if(\Illuminate\Support\Facades\Session::get('is_admin')=='1')
-                    <li class="nav-item menu-open" >
-                        <a href="#" class="nav-link active">
+                    <li class="nav-item menu-open " >
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-tachometer-alt"></i>
                             <p>
                                 Master
                                 <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview" id="myDIV">
+                        <ul class="nav nav-treeview active" id="myDIV">
                             <li class="nav-item" >
-                                <a href="/admin/home" class="nav-link">
+                                <a href="/admin/home" class="nav-link"  data-toggle="tab">
                                     <i class="fa fa-circle nav-icon"></i>
                                     <p>Nhân viên</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/admin/project" class="nav-link">
+                                <a href="/admin/project" class="nav-link"  data-toggle="tab">
                                     <i class="fa fa-circle nav-icon"></i>
                                     <p>Dự án</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/admin/bophan" class="nav-link">
+                                <a href="/admin/bophan" class="nav-link"  data-toggle="tab">
                                     <i class="fa fa-circle nav-icon"></i>
                                     <p>Bộ phận</p>
                                 </a>
@@ -93,19 +92,21 @@
                 </li>
 
             </ul>
-            <!-- /.row (main row) -->
-        </nav><!-- /.container-fluid -->
+     
+        </nav>
     </ul>
     <!-- /.content -->
 </aside>
 <script>
-    var btnContainer = document.getElementById("myDIV");
-    var btns = btnContainer.getElementsByClassName("nav-item");
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-    });
+
+const currentLocation = location.href;
+const menuItem = document.querySelectorAll('#myDIV a');
+const menuLength = menuItem.length
+for (let i=0;i<menuLength;i++){
+    console.log( menuItem[i])
+    if(menuItem[i].href===currentLocation){
+        menuItem[i].className+=" active"
+    }
 }
+
 </script>
