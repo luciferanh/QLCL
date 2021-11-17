@@ -29,7 +29,17 @@ class ProjectService
         return true;
 
     }
-
+    public function update($request,$menu){
+        $menu->name =(string) $request->input('name');
+        $menu->description =(string)  $request->input('description');
+        $menu->content =(string) $request->input('content');
+        $menu->bophan_id =(string) $request->input('bophan_id');
+        $menu->date_start=(string) date('Y-m-d',strtotime($request->input('date_start')));
+        $menu->date_end=(string) date('Y-m-d',strtotime($request->input('date_end')));
+        $menu->save();
+        Session::flash('success','Cập nhập thành công');
+        return true;
+    }
     public function getAll()
     {
         return Project::orderbyDesc('id')->paginate(20);

@@ -22,9 +22,12 @@
                     <select  class="form-control" multiple="multiple" size="10" name="duallistbox_demo1[]" title="duallistbox_demo1[]"  id="framework">
                         @foreach($nv_hien_co as $key => $nv)
                             @php $is_has = 0@endphp
+
                             @foreach($nv_in_pj as $key => $nvpj)
-                                @if($nvpj->nhanvien->id==$nv->id)
-                                    @php $is_has = 1@endphp
+                                @if($nvpj->nhanvien!=null)
+                                    @if($nvpj->nhanvien->id==$nv->id)
+                                        @php $is_has = 1@endphp
+                                    @endif
                                 @endif
                             @endforeach
                             @if($is_has ==0)
@@ -33,10 +36,11 @@
 
                         @endforeach
                         @foreach($nv_in_pj as $key => $nv)
+                            @if($nv->nhanvien!=null)
                                 <option value="{{$nv->nhanvien->id}}" selected="selected" >
                                     {{$nv->nhanvien->name}}
                                    </option>
-
+                            @endif
                         @endforeach
                     </select>
 

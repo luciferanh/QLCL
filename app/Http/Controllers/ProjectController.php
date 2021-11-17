@@ -45,6 +45,7 @@ class ProjectController extends Controller
         ]);
     }
     public function setnv($id){
+        
         $pj = $this->projectService->getProject($id);
         $nv_hien_co = $this->projectService->getNV();
         $nv_in_pj = $this->projectService->getNVPJ($id);
@@ -59,6 +60,19 @@ class ProjectController extends Controller
         $id_ld=$request['leader_id'];
         $this->projectService->setNVPJ($id_pj,$id_nv,$id_ld);
         return redirect()->back();
+    }
+    public function edit_get($id){
+        $pj = $this->projectService->getProject($id);
+        $bophans=$this->projectService->show_bophan();
+        return view('admin.Project.edit',[
+            'title'=> 'Project',
+            'bophans' => $bophans,
+            'pj' =>$pj 
+        ]);
+    }
+    public function edit_post(Project $menu,Request $request){
+        $this->projectService->update($request,$menu);
+        return redirect('/admin/project');
     }
 
 }

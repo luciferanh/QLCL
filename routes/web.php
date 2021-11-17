@@ -54,6 +54,8 @@ Route::middleware(['auth'])->group(function(){
             Route::get('/',[ProjectController::class, 'index']);
             Route::get('add',[ProjectController::class, 'create']);
             Route::post('add',[ProjectController::class, 'up']);
+            Route::get('edit/{menu}',[ProjectController::class, 'edit_get']);
+            Route::post('edit/{menu}',[ProjectController::class, 'edit_post']);
             Route::get('setnv/{menu}',[ProjectController::class, 'setnv']);
             Route::post('setnv/{menu}',[ProjectController::class, 'up_nv']);
 
