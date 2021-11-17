@@ -42,11 +42,11 @@
                           <div class="container1" >
                               <div class="item">
                                 <label for="exampleInputEmail1">Ngày bắt đầu</label> <br/>
-                                <input type="date" class="datepicker" name="date_start" id="date_start"  >
+                                <input type="text" name="date_start"  id="date_start"  >
                               </div>
                               <div class="item1">
                                 <label for="exampleInputEmail1">Ngày kết thúc</label> <br/>
-                                <input type="date" class="datepicker" name="date_end" id="date_end"  >
+                                <input type="text" name="date_end"  id="date_end"  >
                               </div>
                           </div>
                 </div>

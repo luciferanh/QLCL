@@ -23,7 +23,7 @@ class NhanvienController extends Controller
         ]);
     }
     public function up(CreateNV $request){
-
+       
         $result= $this->menuService->create($request);
         return redirect()->back();
     }

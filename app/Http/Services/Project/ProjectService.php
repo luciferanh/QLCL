@@ -18,8 +18,8 @@ class ProjectService
             'description'=>(string)  $request->input('description'),
             'content'=>(string) $request->input('content'),
             'bophan_id'=> $request->input('bophan_id'),
-           'date_start'=>(string)  date('Y-m-d',strtotime($request->input('date_start'))),
-           'date_end'=>(string)  date('Y-m-d',strtotime($request->input('date_end')))
+            'date_start'=>(string) date('Y-m-d',strtotime($request->input('date_start'))),
+            'date_end'=>(string) date('Y-m-d',strtotime($request->input('date_end'))),
         ]);
         Session::flash('success',"Tạo Thành Công ");
         }catch(\Exception $err){

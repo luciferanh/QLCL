@@ -51,8 +51,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Ngày làm việc</label> <br/>
-                        <input type="date" class="datepicker" name="date_start" id="date_start"  data-provide="datepicker" >
-                     
+                        <input type="text" name="date_start" id="date_start">
                     </div>
 
                 </div>

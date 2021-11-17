@@ -13,21 +13,23 @@
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="/css/OverlayScrollbars.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
-
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<meta name="csrf-token" content="<?php echo csrf_token(); ?>">
-
-<script>
-  $(function() {
-      $( ".datepicker" ).datepicker();
-  });
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#date_start" ).datepicker({
+      dateFormat:"dd/mm/yy"
+    });
+  } );
+  $( function() {
+    $( "#date_end" ).datepicker({
+      dateFormat:"dd/mm/yy"
+    });
+  } );
   </script>
-
-
+<meta name="csrf-token" content="<?php echo csrf_token(); ?>">
 
 @yield('head')
 
